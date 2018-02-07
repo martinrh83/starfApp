@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Nuevo ciclo lectivo</h1>
+
+  <button [routerLink]="['/ciclos-lectivos']" class="btn btn-outline-danger">Volver</button>
+  <div class="row">
+    <div class="col-md-12">
+      <form (ngSubmit)="createCl(cl)" #forma="ngForm">
+        <div class="form-group">
+          <label for=""></label>
+          <input  [(ngModel)]="cl.year" name="year" type="text" class="form-control" placeholder="Año" required>
+        </div>
+        <div class="form-group">
+          <button [disabled]="!forma.valid" type="submit" class="btn btn-outline-primary">Guardar Cambios</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

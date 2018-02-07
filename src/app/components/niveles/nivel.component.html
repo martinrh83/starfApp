@@ -1,0 +1,25 @@
+
+
+<div class="container">
+  <h1>Nuevo ciclo lectivo</h1>
+
+  <button [routerLink]="['/niveles']" class="btn btn-outline-danger">Volver</button>
+  <div class="row">
+    <div class="col-md-12">
+      <form (ngSubmit)="createNivel(nivel)" #forma="ngForm">
+        <div class="form-group">
+          <label for=""></label>
+          <input  [(ngModel)]="nivel.level" name="year" type="number" class="form-control" placeholder="Nivel" required>
+        </div>
+        <select class="custom-select" [(ngModel)]="nivel.school_year_id" name="school_year_id" >
+          <option *ngFor="let cl of cls" value= {{cl.id}}>
+             {{cl.year}}
+          </option>
+        </select>
+        <div class="form-group">
+          <button [disabled]="!forma.valid" type="submit" class="btn btn-outline-primary">Guardar Cambios</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
