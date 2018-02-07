@@ -7,8 +7,9 @@ import { CicloLectivo } from '../interfaces/ciclo-lectivo';
 
 @Injectable()
 export class CiclosLectivosService {
-  private clsUrl = 'http://localhost:3000/api/v1/school_years'
-
+  //private clsUrl = 'http://localhost:3000/api/v1/school_years'
+  public clsUrl = 'https://railsapidemo.herokuapp.com/api/v1/school_years'
+  
   constructor(private http:Http) { }
 
   getCls(): Observable<CicloLectivo []>{
