@@ -8,6 +8,8 @@ import { CiclosLectivosComponent } from './components/ciclos-lectivos/ciclos-lec
 import { CicloLectivoComponent } from './components/ciclos-lectivos/ciclo-lectivo.component';
 import { NivelesComponent } from './components/niveles/niveles.component';
 import { NivelComponent } from './components/niveles/nivel.component';
+import { MateriasComponent } from './components/materias/materias.component';
+import { MateriaComponent } from './components/materias/materia.component';
 
 export const router: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -16,6 +18,8 @@ export const router: Routes = [
     { path: 'ciclo-lectivo/new', component: CicloLectivoComponent},
     { path: 'niveles', component: NivelesComponent},
     { path: 'nivel/new', component: NivelComponent},
+    { path: 'materias', component: MateriasComponent},
+    { path: 'materia/new', component: MateriaComponent}
 
 ]
 
