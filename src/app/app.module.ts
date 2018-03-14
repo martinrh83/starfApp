@@ -8,6 +8,7 @@ import { routes } from './app.routes';
 import { CiclosLectivosService } from './services/ciclos-lectivos.service';
 import { NivelesService } from './services/niveles.service';
 import { MateriasService } from './services/materias.service';
+import { ComisionesService } from './services/comisiones.service';
 //components
 import { AppComponent } from './app.component';
 import { CiclosLectivosComponent } from './components/ciclos-lectivos/ciclos-lectivos.component';
@@ -19,6 +20,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { MateriasComponent } from './components/materias/materias.component';
 import { MateriaComponent } from './components/materias/materia.component';
+import { ComisionesComponent } from './components/comisiones/comisiones.component';
 //pipes
 import { KeysPipe } from './pipes/keys.pipe';
 @NgModule({
@@ -32,7 +34,8 @@ import { KeysPipe } from './pipes/keys.pipe';
     NivelesComponent,
     NivelComponent,
     MateriasComponent,
-    MateriaComponent
+    MateriaComponent,
+    ComisionesComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,8 @@ import { KeysPipe } from './pipes/keys.pipe';
   providers: [
     CiclosLectivosService,
     NivelesService,
-    MateriasService
+    MateriasService,
+    ComisionesService
    ],
   bootstrap: [AppComponent]
 })
