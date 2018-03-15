@@ -10,8 +10,8 @@ export class ComisionesService {
 
   //private nivelesUrl = 'https://railsapidemo.herokuapp.com/api/v1/grades'
   //public clsUrl = 'https://railsapidemo.herokuapp.com/api/v1/school_years'
-  //private materiasUrl = 'https://railsapidemo.herokuapp.com/api/v1/subjects'
-  private comisionesUrl = 'http://localhost:3000/api/v1/courses'
+  //private comisionesUrl = 'http://localhost:3000/api/v1/courses'
+  private comisionesUrl = 'https://railsapidemo.herokuapp.com/api/v1/courses'
   
   constructor(private http:Http) { }
 

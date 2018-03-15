@@ -21,6 +21,8 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { MateriasComponent } from './components/materias/materias.component';
 import { MateriaComponent } from './components/materias/materia.component';
 import { ComisionesComponent } from './components/comisiones/comisiones.component';
+import { ComisionComponent } from './components/comisiones/comision.component';
+
 //pipes
 import { KeysPipe } from './pipes/keys.pipe';
 @NgModule({
@@ -35,7 +37,8 @@ import { KeysPipe } from './pipes/keys.pipe';
     NivelComponent,
     MateriasComponent,
     MateriaComponent,
-    ComisionesComponent
+    ComisionesComponent,
+    ComisionComponent
   ],
   imports: [
     BrowserModule,

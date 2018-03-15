@@ -11,6 +11,7 @@ import { NivelComponent } from './components/niveles/nivel.component';
 import { MateriasComponent } from './components/materias/materias.component';
 import { MateriaComponent } from './components/materias/materia.component';
 import { ComisionesComponent } from './components/comisiones/comisiones.component';
+import { ComisionComponent } from './components/comisiones/comision.component';
 
 export const router: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -21,7 +22,8 @@ export const router: Routes = [
     { path: 'nivel/new', component: NivelComponent},
     { path: 'materias', component: MateriasComponent},
     { path: 'materia/new', component: MateriaComponent},
-    { path: 'comisiones', component: ComisionesComponent}
+    { path: 'comisiones', component: ComisionesComponent},
+    { path: 'comision/new', component: ComisionComponent}
 
 
 ]
