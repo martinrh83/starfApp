@@ -1,25 +1,32 @@
 <div class="container">
-  <h1>Nueva Comisión</h1>
-
-  <button [routerLink]="['/comisiones']" class="btn btn-outline-danger">Volver</button>
   <div class="row">
-    <div class="col-md-12">
-      <form (ngSubmit)="createComision(comision)" #forma="ngForm">
-        <div class="form-group">
-          <select class="custom-select" [(ngModel)]="comision.grade_id" name="grade_id" >
-            <option *ngFor="let nivel of niveles" value= {{nivel.id}}>
-               {{nivel.level}} : {{ nivel.school_year.year}}
-            </option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for=""></label>
-          <input  [(ngModel)]="comision.name" name="name" type="text" class="form-control" placeholder="Nombre" required>
-        </div>
-        <div class="form-group">
-          <button [disabled]="!forma.valid" type="submit" class="btn btn-outline-primary">Guardar Cambios</button>
-        </div>
-      </form>
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="form-box">
+        <form (ngSubmit)="createComision(comision)" #forma="ngForm">
+          <h1 class="text-center">Nueva Comisión</h1>
+          <br>
+          <div class="form-group">
+            <select class="custom-select form-control" [(ngModel)]="comision.grade_id" name="grade_id" >
+              <option *ngFor="let nivel of niveles" value= {{nivel.id}}>
+                 {{nivel.level}} : {{ nivel.school_year.year}}
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for=""></label>
+            <input  [(ngModel)]="comision.name" name="name" type="text" class="form-control" placeholder="Nombre" required>
+          </div>
+          <br>
+          <div class="form-group">
+            <div class="text-center">
+              <button [disabled]="!forma.valid" type="submit" class="btn btn-outline-primary puntero">Guardar Cambios</button>
+              <button [routerLink]="['/comisiones']" class="btn btn-outline-danger puntero">Volver</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
+    <div class="col-md-3"></div>
   </div>
 </div>

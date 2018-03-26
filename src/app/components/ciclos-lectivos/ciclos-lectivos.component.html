@@ -4,10 +4,10 @@
 <div class="container">
   <br>
   <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-12">
       <div class="table-responsive">
-        <table class="table table-bordered">
-          <thead class="thead-dark">
+        <table class="table table-bordered table-hover">
+          <thead class="thead">
             <tr>
               <th class="text-center" scope="col">#</th>
               <th class="text-center" scope="col">Ciclo lectivo</th>
@@ -33,8 +33,12 @@
         </div>
       </div>
     </div>
-    <div class="col-md-3 text-right">
-      <button [routerLink]="['/ciclo-lectivo','new']" class="btn btn-outline-primary btn-block" type="button" name="button"> Agregar nuevo</button>
+  </div>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 text-right">
+      <button [routerLink]="['/ciclo-lectivo','new']" class="btn btn-outline-primary btn-block puntero" type="button" name="button"> Agregar nuevo</button>
     </div>
+    <div class="col-md-4"></div>
   </div>
 </div>

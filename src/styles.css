@@ -52,6 +52,14 @@ body {
   background-image: none;
   border-color: #0062cc;
 }
+
+.form-box{
+  margin-top: 100px;
+  padding: 50px;
+  background: #ffffff;
+  border: 10px solid #5e4485;
+}
+
 /*
 .form-container {
     background:white;

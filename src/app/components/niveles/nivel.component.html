@@ -1,25 +1,32 @@
-
-
 <div class="container">
-  <h1>Nuevo ciclo lectivo</h1>
-
-  <button [routerLink]="['/niveles']" class="btn btn-outline-danger">Volver</button>
   <div class="row">
-    <div class="col-md-12">
-      <form (ngSubmit)="createNivel(nivel)" #forma="ngForm">
-        <div class="form-group">
-          <label for=""></label>
-          <input  [(ngModel)]="nivel.level" name="year" type="number" class="form-control" placeholder="Nivel" required>
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="form-box">
+        <div class="text-center">
+          <h1>Nuevo Nivel</h1>
         </div>
-        <select class="custom-select" [(ngModel)]="nivel.school_year_id" name="school_year_id" >
-          <option *ngFor="let cl of cls" value= {{cl.id}}>
-             {{cl.year}}
-          </option>
-        </select>
-        <div class="form-group">
-          <button [disabled]="!forma.valid" type="submit" class="btn btn-outline-primary">Guardar Cambios</button>
-        </div>
-      </form>
+        <form (ngSubmit)="createNivel(nivel)" #forma="ngForm">
+          <div class="form-group">
+            <label for=""></label>
+            <input  [(ngModel)]="nivel.level" name="year" type="number" class="form-control" placeholder="Nivel" required>
+          </div>
+          <div class="form-group"> 
+            <select class="custom-select form-control" [(ngModel)]="nivel.school_year_id" name="school_year_id" >
+              <option *ngFor="let cl of cls" value= {{cl.id}}>
+                 {{cl.year}}
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <div class="text-center">
+              <button [disabled]="!forma.valid" type="submit" class="btn btn-outline-primary puntero">Guardar Cambios</button>
+              <button [routerLink]="['/niveles']" class="btn btn-outline-danger puntero">Volver</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
+    <div class="col-md-3"></div>
   </div>
 </div>
