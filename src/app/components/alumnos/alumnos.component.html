@@ -1,0 +1,41 @@
+<div class="page-title">
+  <h3 class="text-center">Alumnos</h3>
+</div>
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col-md-9">
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead class="thead-dark">
+            <tr>
+              <th class="text-center" scope="col">#</th>
+              <th class="text-center" scope="col">Nombre</th>
+              <th class="text-center" scope="col">Apellido</th>
+              <th class="text-center" scope="col">Legajo</th>
+              <th class="text-center" scope="col">Opciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let alumno of alumnos | keys; let i = index">
+              <th class="text-center"  scope="row">{{i + 1}}</th>
+              <td class="text-center" >{{ alumnos[alumno].name }}</td>
+              <td class="text-center" >{{alumnos[alumno].last_name}}</td>
+              <td class="text-center" >{{alumnos[alumno].legajo}}</td>
+              <td class="text-right">
+                <button [routerLink]="['/ciclo-lectivo', k]" class="btn btn-outline-primary">Editar</button>
+                <button (click)="deleteCl(k)" class="btn btn-outline-danger">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div *ngIf="(alumnos | keys).length === 0 && !loading" class="alert alert-info" role="alert">
+          <strong>No hay registros que mostrar</strong>
+        </div>
+        <div *ngIf="loading" class="alert alert-warning">
+          <strong>Cargando, por favor espere...</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -12,6 +12,7 @@ import { MateriasComponent } from './components/materias/materias.component';
 import { MateriaComponent } from './components/materias/materia.component';
 import { ComisionesComponent } from './components/comisiones/comisiones.component';
 import { ComisionComponent } from './components/comisiones/comision.component';
+import { AlumnosComponent } from './components/alumnos/alumnos.component';
 
 export const router: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -23,7 +24,8 @@ export const router: Routes = [
     { path: 'materias', component: MateriasComponent},
     { path: 'materia/new', component: MateriaComponent},
     { path: 'comisiones', component: ComisionesComponent},
-    { path: 'comision/new', component: ComisionComponent}
+    { path: 'comision/new', component: ComisionComponent},
+    { path: 'alumnos', component: AlumnosComponent}
 
 
 ]

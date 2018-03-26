@@ -9,6 +9,7 @@ import { CiclosLectivosService } from './services/ciclos-lectivos.service';
 import { NivelesService } from './services/niveles.service';
 import { MateriasService } from './services/materias.service';
 import { ComisionesService } from './services/comisiones.service';
+import { AlumnosService } from './services/alumnos.service';
 //components
 import { AppComponent } from './app.component';
 import { CiclosLectivosComponent } from './components/ciclos-lectivos/ciclos-lectivos.component';
@@ -22,6 +23,7 @@ import { MateriasComponent } from './components/materias/materias.component';
 import { MateriaComponent } from './components/materias/materia.component';
 import { ComisionesComponent } from './components/comisiones/comisiones.component';
 import { ComisionComponent } from './components/comisiones/comision.component';
+import { AlumnosComponent } from './components/alumnos/alumnos.component';
 
 //pipes
 import { KeysPipe } from './pipes/keys.pipe';
@@ -38,7 +40,8 @@ import { KeysPipe } from './pipes/keys.pipe';
     MateriasComponent,
     MateriaComponent,
     ComisionesComponent,
-    ComisionComponent
+    ComisionComponent,
+    AlumnosComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,8 @@ import { KeysPipe } from './pipes/keys.pipe';
     CiclosLectivosService,
     NivelesService,
     MateriasService,
-    ComisionesService
+    ComisionesService,
+    AlumnosService
    ],
   bootstrap: [AppComponent]
 })
