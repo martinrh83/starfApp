@@ -1,5 +1,3 @@
-
-
 <div class="container">
   <div class="row">
     <div class="col-md-3"></div>
@@ -9,11 +7,7 @@
           <h1 class="text-center">Nuevo Horario</h1>
           <br>
           <div class="form-group">
-            <select class="custom-select form-control" [(ngModel)]="horario.course_id" name="course_id" >
-              <option *ngFor="let comision of comisiones" value= {{comision.id}}>
-                 {{comision.name}} : {{ comision.grade.school_year.year}}
-              </option>
-            </select>
+            <input class="form-control" [(ngModel)]="horario.course_id" name="course_id" type="hidden" value="{{course_id}}">
           </div>
           <div class="form-group">
             <select class="custom-select form-control" [(ngModel)]="horario.subject_id" name="subject_id" >

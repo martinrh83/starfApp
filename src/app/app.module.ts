@@ -5,12 +5,13 @@ import { NgModule, LOCALE_ID} from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { FormsModule }   from '@angular/forms';
 import { routes } from './app.routes';
-import { DatePipe } from '@angular/common';
+import { DatePipe, registerLocaleData } from '@angular/common';
 import { AmazingTimePickerModule } from 'amazing-time-picker';
+import localeEs from '@angular/common/locales/es';
+import localeEsExtra from '@angular/common/locales/extra/es';
 
-export function getCulture() {
-    return 'es-AR';
-}
+registerLocaleData(localeEs, localeEsExtra);
+
 //services
 import { CiclosLectivosService } from './services/ciclos-lectivos.service';
 import { NivelesService } from './services/niveles.service';
@@ -34,6 +35,7 @@ import { ComisionComponent } from './components/comisiones/comision.component';
 import { AlumnosComponent } from './components/alumnos/alumnos.component';
 import { HorariosComponent } from './components/horarios/horarios.component';
 import { HorarioComponent } from './components/horarios/horario.component';
+import { HorariosComisionComponent } from './components/horarios/horarios-comision.component';
 
 
 
@@ -56,7 +58,8 @@ import { KeysPipe } from './pipes/keys.pipe';
     ComisionComponent,
     AlumnosComponent,
     HorariosComponent,
-    HorarioComponent
+    HorarioComponent,
+    HorariosComisionComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +70,7 @@ import { KeysPipe } from './pipes/keys.pipe';
     AmazingTimePickerModule
   ],
   providers: [
-    { provide: LOCALE_ID, useValue: "es-AR", useFactory: getCulture },
+    { provide: LOCALE_ID, useValue: 'es-AR'},
     CiclosLectivosService,
     NivelesService,
     MateriasService,

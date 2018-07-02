@@ -15,6 +15,7 @@ import { ComisionComponent } from './components/comisiones/comision.component';
 import { AlumnosComponent } from './components/alumnos/alumnos.component';
 import { HorariosComponent } from './components/horarios/horarios.component';
 import { HorarioComponent } from './components/horarios/horario.component';
+import { HorariosComisionComponent } from './components/horarios/horarios-comision.component';
 
 export const router: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -29,7 +30,9 @@ export const router: Routes = [
     { path: 'comision/new', component: ComisionComponent},
     { path: 'alumnos', component: AlumnosComponent},
     { path: 'horarios', component: HorariosComponent},
-    { path: 'horario/new', component: HorarioComponent}
+    { path: 'horarios/:com_id', component: HorariosComisionComponent},
+    { path: 'horario/new/:com_id', component: HorarioComponent},
+
 
 
 ]

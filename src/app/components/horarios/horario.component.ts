@@ -2,12 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx'
 import { AmazingTimePickerService } from 'amazing-time-picker';
-import { ComisionesService } from '../../services/comisiones.service';
 import { MateriasService } from '../../services/materias.service';
 import { HorariosService } from '../../services/horarios.service';
-import { Comision } from '../../interfaces/comision';
 import { Materia } from '../../interfaces/materia';
 import { Horario } from '../../interfaces/horario';
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-horario',
@@ -15,16 +14,16 @@ import { Horario } from '../../interfaces/horario';
 })
 
 export class HorarioComponent implements OnInit {
-
+  comision_id:any;
   submitted: boolean = false;
-  comisiones:Comision[];
   materias:Materia[];
   horario = new Horario;
 
-  constructor(private atp: AmazingTimePickerService, private _horaService: HorariosService, private _comService: ComisionesService, private _matService: MateriasService) {
-    this._comService.getComisiones().subscribe(data => {
-      this.comisiones = data;
-     });
+  constructor(private atp: AmazingTimePickerService, private _horaService: HorariosService, private _matService: MateriasService, private router:ActivatedRoute, private _router:Router) {
+    this.router.params.subscribe( params => {
+        this.comision_id = params['com_id'];
+        this.horario.course_id = this.comision_id;
+    });
     this._matService.getMaterias().subscribe(data => {
       this.materias = data;
      });
@@ -63,7 +62,8 @@ export class HorarioComponent implements OnInit {
 
   createHorario(horario:Horario){
     this.submitted = true;
-    this._horaService.createHorario(horario).subscribe(data => {return true});
+    this._horaService.createHorario(horario, this.horario.course_id.toString()).subscribe(data => {return true});
+    this._router.navigate(['/horarios/', this.comision_id]);
   }
 
 }

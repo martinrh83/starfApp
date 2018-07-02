@@ -11,7 +11,7 @@ export class NivelesService {
   //public clsUrl = 'http://localhost:3000/api/v1/school_years'
 
   private nivelesUrl = 'https://railsapidemo.herokuapp.com/api/v1/grades'
-  public clsUrl = 'https://railsapidemo.herokuapp.com/api/v1/school_years'
+  //public clsUrl = 'https://railsapidemo.herokuapp.com/api/v1/school_years'
 
   constructor(private http:Http) { }
 

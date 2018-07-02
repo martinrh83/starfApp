@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx'
-import { Horario } from '../../interfaces/horario';
-import { TablaHorario } from '../../interfaces/tablaHorario';
-import { HorariosService } from '../../services/horarios.service';
-import { DatePipe } from '@angular/common';
+import { CicloLectivo } from '../../interfaces/ciclo-lectivo';
+import { CiclosLectivosService } from '../../services/ciclos-lectivos.service';
 
 @Component({
   selector: 'app-horarios',
@@ -17,47 +15,16 @@ import { DatePipe } from '@angular/common';
 
 
 export class HorariosComponent implements OnInit {
+  cls:CicloLectivo[];
+  loading:boolean = true;
 
-  prueba:any;
-  horarios: Horario[] = [];
-  arrayHorario: TablaHorario [] = [
-
-    {"day": "Lunes", "hour_init": "08:00", "hour_end": "08:45", "course": "4k6"},
-    {"day": "Martes", "hour_init": "08:00", "hour_end": "08:45", "course": "4k6"},
-    {"day": "Miercoles", "hour_init": "08:00", "hour_end": "08:45", "course": "4k6"},
-    {"day": "Jueves", "hour_init": "08:00", "hour_end": "08:45", "course": "4k6"},
-    {"day": "Viernes", "hour_init": "08:00", "hour_end": "08:45", "course": "4k6"},
-    {"day": "Lunes", "hour_init": "08:45", "hour_end": "09:30", "course": "4k6"},
-    {"day": "Martes", "hour_init": "08:45", "hour_end": "09:30", "course": "4k6"},
-    {"day": "Miercoles", "hour_init": "08:45", "hour_end": "09:30", "course": "4k6"},
-    {"day": "Jueves", "hour_init": "08:45", "hour_end": "09:30", "course": "4k6"},
-    {"day": "Viernes", "hour_init": "08:45", "hour_end": "09:30", "course": "4k6"}
-
-  ];
-
-  constructor(private _horariosService: HorariosService, private datePipe: DatePipe) {
-
+  constructor(private _clService: CiclosLectivosService){
+    this._clService.getCls().subscribe(data => {
+      this.cls = data;
+      this.loading = false;
+     });
   }
 
   ngOnInit() {
-    //const filterByCourse = (horas:Horario[]) =>
-    //  horas.filter(hora => hora.day == "Lunes");
-    const filterByCourse = (horas:any[]) =>
-      horas.filter(hora => this.datePipe.transform(hora.hour_init, 'HH:mm') == "08:00");
-
-    this._horariosService.getHorarios().subscribe(data => {
-      this.horarios = data;
-      //console.log(this.horarios);
-
-      let filterbyAge = filterByCourse(this.horarios);
-      console.log(filterbyAge);
-
-      console.log( this.datePipe.transform("2000-01-01T19:30:16.921Z", 'HH:mm'))
-     });
-
-    //console.log(filterbyAge);
-    //console.log(this.prueba);
-  }
-
-  
+  }  
 }

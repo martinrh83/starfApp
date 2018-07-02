@@ -8,8 +8,8 @@ import { Alumno } from '../interfaces/alumno';
 @Injectable()
 export class AlumnosService {
   //private nivelesUrl = 'http://localhost:3000/api/v1/grades'
-  public alumnosUrl = 'http://localhost:3000/api/v1/students'
-  //public alumnosUrl = 'https://railsapidemo.herokuapp.com/api/v1/students'
+  //public alumnosUrl = 'http://localhost:3000/api/v1/students'
+  public alumnosUrl = 'https://railsapidemo.herokuapp.com/api/v1/students'
 
   constructor(private http:Http) { }
 

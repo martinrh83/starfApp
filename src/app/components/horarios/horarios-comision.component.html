@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row nuevoHorario">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <button [routerLink]="['/horario/new', id_comision ]" class="btn btn-outline-primary btn-block puntero" type="button" name="button"> Agregar nuevo</button>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+  <div class="row">
+    <div class="flex-container-dias">
+      <div class="item">Horas</div>
+      <div class="item">Lunes</div>
+      <div class="item">Martes</div>
+      <div class="item">Miercoles</div>
+      <div class="item">Jueves</div>
+      <div class="item">Viernes</div>
+    </div>
+    <div class="flex-container">
+      <div class="horas">
+        <div class="item">8:00 a 8:45</div>
+        <div class="item">8:45 a 9:30</div>
+        <div class="item">9:30 a 10:15</div>
+        <div class="item">10:15 a 11:00</div>
+        <div class="item">11:00 a 11:45</div>
+        <div class="item">11:45 a 12:30</div>
+        <div class="item">12:30 a 13:15</div>
+      </div>
+      <div class="materias" >
+        <div class="item" *ngFor="let item of arrayHorario">
+          <p  *ngIf="item.subject != null; else noMateria"> {{item.subject.subject.name}}</p>
+          <ng-template #noMateria>
+            
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

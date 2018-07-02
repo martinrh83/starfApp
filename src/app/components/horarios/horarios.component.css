@@ -1,0 +1,25 @@
+.cabeceraNivel {
+  color: #fff;
+  background-color: #5e4485;
+  border-radius: 5px;
+  padding:5px 0;
+}
+.year_panel{
+  color: #5e4485;
+  font-weight: bold;
+}
+
+.panel_comision{
+  background-color: #D6D6D6 ;
+}
+.comision{
+  /*border: 5px solid;*/
+  margin:15px 0;
+  padding:10px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+#accordion{
+  margin-top: 50px;
+}
