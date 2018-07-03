@@ -7,7 +7,7 @@
           <h1 class="text-center">Nuevo Horario</h1>
           <br>
           <div class="form-group">
-            <input class="form-control" [(ngModel)]="horario.course_id" name="course_id" type="hidden" value="{{course_id}}">
+            <input class="form-control" [(ngModel)]="horario.course_id" name="course_id" type="hidden">
           </div>
           <div class="form-group">
             <select class="custom-select form-control" [(ngModel)]="horario.subject_id" name="subject_id" >
@@ -28,9 +28,9 @@
           </div>
           <br>
           <button type="button" (click)="getHourInit()"> Hora de inicio</button>
-            <input [(ngModel)]="horario.hour_init"  name="hour_init" type="time" value="{{hour_init}}" class="form-control" >
+            <input [(ngModel)]="horario.hour_init"  name="hour_init" type="time" class="form-control" >
           <button type="button" (click)="getHourEnd()"> Hora de finalizacion</button>
-            <input [(ngModel)]="horario.hour_end"  name="hour_end" type="time" value="{{hour_end}}" class="form-control" >
+            <input [(ngModel)]="horario.hour_end"  name="hour_end" type="time" class="form-control" >
           <div class="form-group">
             <div class="text-center">
               <button [disabled]="!forma.valid" type="submit" class="btn btn-outline-primary puntero">Guardar Cambios</button>

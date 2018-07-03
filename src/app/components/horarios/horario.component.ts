@@ -14,10 +14,12 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 
 export class HorarioComponent implements OnInit {
-  comision_id:any;
+  public comision_id:any;
   submitted: boolean = false;
   materias:Materia[];
   horario = new Horario;
+  hour_init:any;
+  hour_end:any;
 
   constructor(private atp: AmazingTimePickerService, private _horaService: HorariosService, private _matService: MateriasService, private router:ActivatedRoute, private _router:Router) {
     this.router.params.subscribe( params => {
@@ -29,9 +31,9 @@ export class HorarioComponent implements OnInit {
      });
   }
 
-  getHourInit() {
+  public getHourInit() {
       const amazingTimePicker = this.atp.open({
-          time:  this.horario.hour_init,
+          time:  this.hour_init,
           locale: 'es',
           arrowStyle: {
               background: 'red',
@@ -43,9 +45,9 @@ export class HorarioComponent implements OnInit {
       });
   }
 
-  getHourEnd() {
+  public getHourEnd() {
       const amazingTimePicker = this.atp.open({
-          time:  this.horario.hour_end,
+          time:  this.hour_end,
           locale: 'es',
           arrowStyle: {
               background: 'red',
@@ -58,11 +60,13 @@ export class HorarioComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
   createHorario(horario:Horario){
     this.submitted = true;
-    this._horaService.createHorario(horario, this.horario.course_id.toString()).subscribe(data => {return true});
+    console.log(horario);
+    this._horaService.createHorario(horario, this.comision_id ).subscribe(data => {return true});
     this._router.navigate(['/horarios/', this.comision_id]);
   }
 

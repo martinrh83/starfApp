@@ -10,7 +10,7 @@ export class MateriasService {
   //private nivelesUrl = 'https://railsapidemo.herokuapp.com/api/v1/grades'
   //public clsUrl = 'https://railsapidemo.herokuapp.com/api/v1/school_years'
   private materiasUrl = 'https://railsapidemo.herokuapp.com/api/v1/subjects'
-  //private materiasUrl = 'http://localhost:3000/api/v1/subjects'
+  // private materiasUrl = 'http://localhost:3000/api/v1/subjects'
   constructor(private http:Http) { }
 
   getMaterias(): Observable<Materia []>{
