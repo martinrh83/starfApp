@@ -299,3 +299,8 @@ h2 {
   justify-content: center;
   align-items: center;
 }
+
+.userEmail{
+  color:#fff;
+  margin:0 10px;
+}

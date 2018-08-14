@@ -11,24 +11,29 @@
       <li class="nav-item" routerLinkActive="active">
         <a [routerLink]="['/home']" class="nav-link" href="#">Home <span class="sr-only .ml-1 ">(current)</span></a>
       </li>
-      <li class="nav-item" routerLinkActive="active" >
+      <li class="nav-item" routerLinkActive="active" *ngIf="auth.isAuthenticated()" >
         <a [routerLink]="['/ciclos-lectivos']" class="nav-link"> Ciclos Lectivos</a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
+      <li class="nav-item" routerLinkActive="active" *ngIf="auth.isAuthenticated()">
         <a [routerLink]="['/niveles']" class="nav-link"> Niveles</a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
+      <li class="nav-item" routerLinkActive="active" *ngIf="auth.isAuthenticated()">
         <a [routerLink]="['/comisiones']" class="nav-link"> Comisiones</a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
+      <li class="nav-item" routerLinkActive="active" *ngIf="auth.isAuthenticated()">
         <a [routerLink]="['/materias']" class="nav-link"> Materias</a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
+      <li class="nav-item" routerLinkActive="active" *ngIf="auth.isAuthenticated()">
         <a [routerLink]="['/alumnos']" class="nav-link"> Alumnos</a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
+      <li class="nav-item" routerLinkActive="active" *ngIf="auth.isAuthenticated()">
         <a [routerLink]="['/horarios']" class="nav-link"> Horarios</a>
       </li>
     </ul>
+    <span class="navbar-text">
+      <span class="userEmail" *ngIf="userEmail" > {{ userEmail }}</span>
+      <button (click)="login()" *ngIf="!auth.isAuthenticated()" type="button" class="btn btn-outline-primary">Login</button>
+      <button (click)="salir()" *ngIf="auth.isAuthenticated()" type="button" class="btn btn-outline-primary">Salir</button>
+    </span>
   </div>
 </nav>

@@ -19,6 +19,8 @@ import { MateriasService } from './services/materias.service';
 import { ComisionesService } from './services/comisiones.service';
 import { AlumnosService } from './services/alumnos.service';
 import { HorariosService } from './services/horarios.service';
+import { AuthService } from './services/auth.service';
+import { AuthGuardService } from './services/auth-guard.service';
 //components
 import { AppComponent } from './app.component';
 import { CiclosLectivosComponent } from './components/ciclos-lectivos/ciclos-lectivos.component';
@@ -77,6 +79,8 @@ import { KeysPipe } from './pipes/keys.pipe';
     ComisionesService,
     AlumnosService,
     HorariosService,
+    AuthService,
+    AuthGuardService,
     DatePipe
    ],
   bootstrap: [AppComponent]

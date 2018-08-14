@@ -17,21 +17,23 @@ import { HorariosComponent } from './components/horarios/horarios.component';
 import { HorarioComponent } from './components/horarios/horario.component';
 import { HorariosComisionComponent } from './components/horarios/horarios-comision.component';
 
+import { AuthGuardService } from './services/auth-guard.service';
+
 export const router: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent},
-    { path: 'ciclos-lectivos', component: CiclosLectivosComponent},
-    { path: 'ciclo-lectivo/new', component: CicloLectivoComponent},
-    { path: 'niveles', component: NivelesComponent},
-    { path: 'nivel/new', component: NivelComponent},
-    { path: 'materias', component: MateriasComponent},
-    { path: 'materia/new', component: MateriaComponent},
-    { path: 'comisiones', component: ComisionesComponent},
-    { path: 'comision/new', component: ComisionComponent},
-    { path: 'alumnos', component: AlumnosComponent},
-    { path: 'horarios', component: HorariosComponent},
-    { path: 'horarios/:com_id', component: HorariosComisionComponent},
-    { path: 'horario/new/:com_id', component: HorarioComponent},
+    { path: 'ciclos-lectivos', component: CiclosLectivosComponent, canActivate: [AuthGuardService]},
+    { path: 'ciclo-lectivo/new', component: CicloLectivoComponent, canActivate: [AuthGuardService]},
+    { path: 'niveles', component: NivelesComponent, canActivate: [AuthGuardService]},
+    { path: 'nivel/new', component: NivelComponent, canActivate: [AuthGuardService]},
+    { path: 'materias', component: MateriasComponent, canActivate: [AuthGuardService]},
+    { path: 'materia/new', component: MateriaComponent, canActivate: [AuthGuardService]},
+    { path: 'comisiones', component: ComisionesComponent, canActivate: [AuthGuardService]},
+    { path: 'comision/new', component: ComisionComponent, canActivate: [AuthGuardService]},
+    { path: 'alumnos', component: AlumnosComponent, canActivate: [AuthGuardService]},
+    { path: 'horarios', component: HorariosComponent, canActivate: [AuthGuardService]},
+    { path: 'horarios/:com_id', component: HorariosComisionComponent, canActivate: [AuthGuardService]},
+    { path: 'horario/new/:com_id', component: HorarioComponent, canActivate: [AuthGuardService]},
 
 
 
