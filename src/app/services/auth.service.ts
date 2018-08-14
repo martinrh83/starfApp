@@ -17,7 +17,7 @@ export class AuthService {
     domain: 'martinrh83.auth0.com',
     responseType: 'token id_token',
     audience: 'https://martinrh83.auth0.com/userinfo',
-    redirectUri: 'http://localhost:4200/home',
+    redirectUri: 'https://martinrh83.github.io/starfApp/home',
     scope: 'openid profile'
   });
 

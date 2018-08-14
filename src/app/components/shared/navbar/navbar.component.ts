@@ -9,13 +9,13 @@ import { AuthService } from '../../../services/auth.service';
 export class NavbarComponent implements OnInit {
   profile:any;
   userEmail: string;
-  constructor(private auth: AuthService) { 
+  constructor(public auth: AuthService) { 
     auth.handleAuthentication();
   }
 
   ngOnInit() {
     if (this.auth.isAuthenticated()){
-      var userProfile = localStorage.getItem('profile');
+      let userProfile = localStorage.getItem('profile');
       this.userEmail= userProfile
      }
      else {
