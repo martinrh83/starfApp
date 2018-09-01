@@ -3,12 +3,12 @@ import { Http, Response, Headers, RequestOptions} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx'
 import { Materia } from '../interfaces/materia';
+import { URL_SERVICIOS } from '../config/url';
 
 @Injectable()
 export class MateriasService {
+  private materiasUrl = URL_SERVICIOS + "/subjects"
 
-  private materiasUrl = 'https://railsapidemo.herokuapp.com/api/v1/subjects'
-  //private materiasUrl = 'http://localhost:3000/api/v1/subjects'
   constructor(private http:Http) { }
 
   getMaterias(): Observable<Materia []>{

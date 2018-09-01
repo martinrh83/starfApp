@@ -3,13 +3,11 @@ import { Http, Response, Headers, RequestOptions} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx'
 import { Alumno } from '../interfaces/alumno';
-
+import { URL_SERVICIOS } from '../config/url';
 
 @Injectable()
 export class AlumnosService {
-  //private nivelesUrl = 'http://localhost:3000/api/v1/grades'
-  //public alumnosUrl = 'http://localhost:3000/api/v1/students'
-  public alumnosUrl = 'https://railsapidemo.herokuapp.com/api/v1/students'
+  public alumnosUrl = URL_SERVICIOS + "/students"
 
   constructor(private http:Http) { }
 

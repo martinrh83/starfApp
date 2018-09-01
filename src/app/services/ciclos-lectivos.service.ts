@@ -3,12 +3,13 @@ import { Http, Response, Headers, RequestOptions} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx'
 import { CicloLectivo } from '../interfaces/ciclo-lectivo';
+import { URL_SERVICIOS } from '../config/url';
 
 
 @Injectable()
 export class CiclosLectivosService {
-  //private clsUrl = 'http://localhost:3000/api/v1/school_years'
-  public clsUrl = 'https://railsapidemo.herokuapp.com/api/v1/school_years'
+
+  public clsUrl = URL_SERVICIOS + "/school_years"
   
   constructor(private http:Http) { }
 

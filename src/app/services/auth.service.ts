@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { Observable, Observer } from 'rxjs';
 import * as auth0 from 'auth0-js';
+import { URL_APP } from '../config/url';
 
 (window as any).global = window;
 
@@ -17,7 +18,7 @@ export class AuthService {
     domain: 'martinrh83.auth0.com',
     responseType: 'token id_token',
     audience: 'https://martinrh83.auth0.com/userinfo',
-    redirectUri: 'https://martinrh83.github.io/starfApp/home',
+    redirectUri: URL_APP,
     scope: 'openid profile'
   });
 
