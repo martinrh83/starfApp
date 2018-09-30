@@ -21,13 +21,13 @@ import { AlumnosService } from './services/alumnos.service';
 import { HorariosService } from './services/horarios.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
+import { DataService } from './services/socket.service';
 //components
 import { AppComponent } from './app.component';
 import { CiclosLectivosComponent } from './components/ciclos-lectivos/ciclos-lectivos.component';
 import { CicloLectivoComponent } from './components/ciclos-lectivos/ciclo-lectivo.component';
 import { NivelesComponent } from './components/niveles/niveles.component';
 import { NivelComponent } from './components/niveles/nivel.component';
-
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { MateriasComponent } from './components/materias/materias.component';
@@ -81,6 +81,7 @@ import { KeysPipe } from './pipes/keys.pipe';
     HorariosService,
     AuthService,
     AuthGuardService,
+    DataService,
     DatePipe
    ],
   bootstrap: [AppComponent]
