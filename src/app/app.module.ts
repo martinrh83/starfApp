@@ -9,7 +9,7 @@ import { DatePipe, registerLocaleData } from '@angular/common';
 import { AmazingTimePickerModule } from 'amazing-time-picker';
 import localeEs from '@angular/common/locales/es';
 import localeEsExtra from '@angular/common/locales/extra/es';
-
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 registerLocaleData(localeEs, localeEsExtra);
 
 //services
@@ -38,6 +38,8 @@ import { AlumnosComponent } from './components/alumnos/alumnos.component';
 import { HorariosComponent } from './components/horarios/horarios.component';
 import { HorarioComponent } from './components/horarios/horario.component';
 import { HorariosComisionComponent } from './components/horarios/horarios-comision.component';
+import { CalendarComponent } from './components/horarios/calendar.component';
+import { TimetableComponent } from './components/horarios/timetable.component';
 
 
 
@@ -61,7 +63,9 @@ import { KeysPipe } from './pipes/keys.pipe';
     AlumnosComponent,
     HorariosComponent,
     HorarioComponent,
-    HorariosComisionComponent
+    HorariosComisionComponent,
+    TimetableComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +73,8 @@ import { KeysPipe } from './pipes/keys.pipe';
     FormsModule,
     HttpModule,
     routes,
-    AmazingTimePickerModule
+    AmazingTimePickerModule,
+    NgMultiSelectDropDownModule.forRoot()
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'es-AR'},

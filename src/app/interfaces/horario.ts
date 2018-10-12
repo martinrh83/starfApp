@@ -5,7 +5,8 @@ export class Horario {
       public hour_init?: any,
       public hour_end?: any,
       public course_id?: number,
-      public subject_id?: number
+      public subject_id?: number,
+      public classroom_id?: number
    ) {}
 
 }

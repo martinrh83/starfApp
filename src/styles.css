@@ -304,3 +304,35 @@ h2 {
   color:#fff;
   margin:0 10px;
 }
+
+.calendar{
+  width: 462px;
+}
+
+.flex-calendar {
+  width:100%;
+  padding:10px;
+  /*height: 600px;*/
+  display: flex;
+  flex-flow: row;
+}
+
+.calendar-days{
+  width:60px;
+  height: 60px;
+  background: red;
+  border: 3px solid black;
+}
+
+.inactive{
+  opacity: 0.6;
+}
+
+.today{
+  color:yellow;
+}
+
+.selectedDay{
+  background: peru;
+  opacity: 0.6px;
+}

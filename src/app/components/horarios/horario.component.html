@@ -3,7 +3,7 @@
     <div class="col-md-3"></div>
     <div class="col-md-6">
       <div class="form-box">
-        <form (ngSubmit)="createHorario(horario)" #forma="ngForm">
+        <form (ngSubmit)="createHorario(horario,selectedHs)" #forma="ngForm">
           <h1 class="text-center">Nuevo Horario</h1>
           <br>
           <div class="form-group">
@@ -13,6 +13,13 @@
             <select class="custom-select form-control" [(ngModel)]="horario.subject_id" name="subject_id" >
               <option *ngFor="let  materia of materias" value= {{materia.id}}>
                  {{materia.name}}
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <select class="custom-select form-control" [(ngModel)]="horario.classroom_id" name="classroom_id" >
+              <option *ngFor="let  aula of aulas" value= {{aula.id}}>
+                 {{aula.description}}
               </option>
             </select>
           </div>
@@ -27,10 +34,17 @@
             </select>
           </div>
           <br>
-          <button type="button" (click)="getHourInit()"> Hora de inicio</button>
-            <input [(ngModel)]="horario.hour_init"  name="hour_init" type="time" class="form-control" >
-          <button type="button" (click)="getHourEnd()"> Hora de finalizacion</button>
-            <input [(ngModel)]="horario.hour_end"  name="hour_end" type="time" class="form-control" >
+          <div class="form-group">
+            <ng-multiselect-dropdown
+              name="selectedHs"
+              [placeholder]="'selecciones al menos un horario'"
+              [data]="timetables"
+              [(ngModel)]="selectedHs"
+              [settings]="dropdownSettings"
+            >
+            </ng-multiselect-dropdown>
+          </div>
+          <app-calendar (valueChange)='saveDaysSelected($event)'></app-calendar>
           <div class="form-group">
             <div class="text-center">
               <button [disabled]="!forma.valid" type="submit" class="btn btn-outline-primary puntero">Guardar Cambios</button>

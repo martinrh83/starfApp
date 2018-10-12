@@ -9,7 +9,7 @@ export class DataService {
 
   constructor(){
     let data = {'task_id':'1','legajo': '36034', 'alumno':'Romano Martin', 'confidence': '45', 'datetime':'asdasd'}
-    setInterval(() => console.log(data), 1500);
+    //setInterval(() => console.log(data), 1500);
     /*let rws = new ReconnectingWebSocket('ws://jorgearias1:-d350la1@192.168.0.11:8000/testing/');
     rws.addEventListener('open', () => {
         

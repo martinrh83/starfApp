@@ -28,6 +28,8 @@
     "bootstrap": "^4.0.0-alpha.6",
     "core-js": "^2.4.1",
     "jquery": "^3.2.1",
+    "moment": "^2.22.2",
+    "ng-multiselect-dropdown": "^0.2.1",
     "popper.js": "^1.12.9",
     "reconnecting-websocket": "^4.0.0-rc5",
     "rxjs": "^6.1.0",
