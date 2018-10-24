@@ -2,6 +2,12 @@
 body {
     /*background:#E2E4E6;*/
   /*padding-top:4em;*/
+  width: 100%;
+  height: 100%;
+  background: url('./fondo.jpeg') !important;
+  background-size: 100% 100%;
+  background-position: top center;
+ 
 }
 
 /*.bg-navbar{
@@ -348,6 +354,9 @@ RIPPLES EFFECT
   border: 10px solid #5e4485;
 }
 
+.table-responsive{
+  background-color: #fff;
+}
 /*
 .form-container {
     background:white;
