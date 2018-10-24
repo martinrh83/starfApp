@@ -8,9 +8,12 @@ import { DataService } from '../../services/socket.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor(private dataService: DataService) { 
-
+  dataSocket:any;
+  constructor(private _socketService: DataService) { 
+    console.log(this._socketService.data);
+    this.dataSocket = this._socketService.data
+    console.log(this.dataSocket)
+    //this._socketService.updateAsistencia(this.dataSocket)
   }
 
   ngOnInit() {

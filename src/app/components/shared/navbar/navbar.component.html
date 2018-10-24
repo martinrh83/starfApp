@@ -1,18 +1,16 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-navbar navbar-expand-md py-md-2">
+<nav class="navbar navbar-expand-lg navbar-expand-md">
   <a href="/">
-      <img alt="logo" width="150" height="80" src="assets/img/logo.png">
+      <img alt="logo" class="logo" src="../../dist/assets/img/starf.jpeg">
+      <!-- <a class="navbar-brand" href="#">Starf</a> -->
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav mr-auto menu">
       <li class="nav-item" routerLinkActive="active">
         <a [routerLink]="['/home']" class="nav-link" href="#">Home <span class="sr-only .ml-1 ">(current)</span></a>
-      </li>
-      <li class="nav-item" routerLinkActive="active" >
-        <a [routerLink]="['/calendar']" class="nav-link"> Calendario</a>
       </li>
       <li class="nav-item" routerLinkActive="active" *ngIf="auth.isAuthenticated()" >
         <a [routerLink]="['/ciclos-lectivos']" class="nav-link"> Ciclos Lectivos</a>
@@ -33,10 +31,10 @@
         <a [routerLink]="['/horarios']" class="nav-link"> Horarios</a>
       </li>
     </ul>
-    <span class="navbar-text">
+    <span class="text-center">
       <span class="userEmail" *ngIf="userEmail" > {{ userEmail }}</span>
       <button (click)="login()" *ngIf="!auth.isAuthenticated()" type="button" class="btn btn-outline-primary">Login</button>
-      <button (click)="salir()" *ngIf="auth.isAuthenticated()" type="button" class="btn btn-outline-primary">Salir</button>
+      <button (click)="salir()" *ngIf="auth.isAuthenticated()" type="button" class="btn btn-outline-danger">Salir</button>
     </span>
   </div>
 </nav>

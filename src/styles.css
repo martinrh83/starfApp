@@ -4,40 +4,328 @@ body {
   /*padding-top:4em;*/
 }
 
-.bg-navbar{
+/*.bg-navbar{
   background-color: #5e4485;
+
+}*/
+.navbar-toggler.navbar-toggler {
+    border-color: #007FFF;
+}
+
+.navbar .navbar-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#007FFF' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
 .navbar {
-    min-height: 120px;
+  border-color: rgba(35, 35, 35, .05);
+  background-color: #fff;
 
 }
-.nav-item {
-  font-size: 20px;
-  padding-left:10px;
+
+/*.navbar-brand {
+  color: #007FFF;
+  padding: 1px;
+  line-height: 1.90em;
+  -webkit-transition: padding .2s ease-in;
+  -moz-transition: padding .2s ease-in;
+  transition: padding .2s ease-in;
+  float: none;
 }
+
+.navbar-brand:hover,
+.navbar-brand:focus {
+  color: #007FFF;
+}*/
+
+.logo{
+  height:40px;
+}
+
+.menu{
+  padding-top: 14px;
+}
+
+.navbar .navbar-nav > li>a{
+  font-size: 14px;
+  color: #001A33;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.navbar .navbar-nav>li>a:hover,
+.navbar .navbar-nav>li>a:focus:hover {
+  color: #007FFF;
+}
+
+.navbar .navbar-nav .active a { 
+  color: #007FFF !important;
+}
+
 .page-title{
+  text-transform: uppercase;
   background-color: #3f2f59;
-  color:#fff;
   padding:10px 0;
 }
+.page-title h4{
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  text-shadow: 2px 2px 0 #000;
+}
+
+/* ******************************
+RIPPLES EFFECT
+****************************** */
+  .ripples {
+      overflow: hidden;
+      position: relative;
+  }
+  
+  .waves {
+      position: absolute;
+      display: block;
+      border-radius: 100%;
+      background-color: rgba(255, 255, 255, 0.3);
+      -webkit-transform: scale(0);
+         -moz-transform: scale(0);
+           -o-transform: scale(0);
+              transform: scale(0);
+  }
+
+  .ripple {
+      -webkit-animation: ripple 0.65s linear;
+         -moz-animation: ripple 0.65s linear;
+          -ms-animation: ripple 0.65s linear;
+           -o-animation: ripple 0.65s linear;
+              animation: ripple 0.65s linear;
+  }
+
+  @-webkit-keyframes ripple {
+      100% {
+          opacity: 0;
+          -webkit-transform: scale(2.5);
+      }
+  }
+  
+  @-moz-keyframes ripple {
+      100% {
+          opacity: 0;
+          -moz-transform: scale(2.5);
+      }
+  }
+  
+  @-o-keyframes ripple {
+      100% {
+          opacity: 0;
+          -o-transform: scale(2.5);
+      }
+  }
+  
+  @keyframes ripple {
+      100% {
+          opacity: 0;
+          transform: scale(2.5);
+      }
+  }
+
+/* ******************************
+  BUTTONS
+****************************** */
+.btn {
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    vertical-align: middle;
+    border: none;
+    padding: 0 16px;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    color: #212121;
+    background-image: none;
+    background-color: #E0E0E0;
+    
+    -webkit-border-radius: 2px;
+       -moz-border-radius: 2px;
+            border-radius: 2px;
+
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+
+    -webkit-transition: all 0.2s ease;
+       -moz-transition: all 0.2s ease;
+         -o-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+
+    -ms-touch-action: manipulation;
+        touch-action: manipulation;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+}
+
+/* ----- BUTTON STATES ----- */
+  .btn:focus,
+  .btn:active:focus,
+  .btn.active:focus,
+  .btn.focus,
+  .btn:active.focus,
+  .btn.active.focus {
+      outline: none;
+  }
+
+  .btn:hover,
+  .btn:focus,
+  .btn.focus {
+      color: #212121;
+      text-decoration: none;
+  }
+
+  .btn:active,
+  .btn.active {
+      outline: 0;
+      background-image: none;
+  }
+
+  .btn.disabled,
+  .btn[disabled],
+  fieldset[disabled] .btn {
+      cursor: not-allowed;
+      pointer-events: none;
+      opacity: 0.5;
+      filter: alpha(opacity=50);
+  }
+
+/* ----- ALTERNATE OPTIONS ----- */
+/* PRIMARY */
+    .btn-primary {
+        color: #ffffff;
+        background-color: #3F51B5;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary.focus,
+    .btn-primary:active,
+    .btn-primary.active {
+        color: #ffffff;
+        background-color: #3949AB;
+    }
+
+/* ACCENT */
+    .btn-accent {
+        color: #ffffff;
+        background-color: #EC407A;
+    }
+
+    .btn-accent:hover,
+    .btn-accent:focus,
+    .btn-accent.focus,
+    .btn-accent:active,
+    .btn-accent.active {
+        color: #ffffff;
+        background-color: #E91E63;
+    }
+
+/* SUCCESS */
+    .btn-success {
+        color: #ffffff;
+        background-color: #009688;
+    }
+
+    .btn-success:hover,
+    .btn-success:focus,
+    .btn-success.focus,
+    .btn-success:active,
+    .btn-success.active {
+        color: #ffffff;
+        background-color: #00897B;
+    }
+
+/* ----- ACTION ----- */
+    .btn-action {
+        min-width: 40px;
+        width: 40px;
+        height: 40px;
+        line-height: 55px;
+        padding: 0;
+        border-radius: 20px;
+    }
+
+    .btn-action-lg {
+        min-width: 56px;
+        width: 56px;
+        height: 56px;
+        line-height: 84px;
+        padding: 0;
+        border-radius: 28px;
+    }
+
+    .btn-action-lg .material-icons {
+        font-size: 36px;
+    }
+
+    .btn-action .waves,
+    .btn-action-lg .waves {
+        display: none;
+    }
 
 .new-option{
   padding:10px 0;
 }
-.btn-outline-primary {
-  color: #3f2f59;
-  background-color: #fff;
-  border-color: #3f2f59;
+
+/* ----- BTN OUTLINE PRIMARY ----- */
+
+.btn-outline-danger:hover {
+  color: #fff;
+}
+
+.btn-outline-danger:active {
+  box-shadow: none !important;
+}
+
+.btn-outline-danger:focus {
+  box-shadow: none !important;
 }
 
 .btn-outline-primary:hover {
   color: #fff;
   background-color: #3f2f59;
   border-color: #fff;
+  box-shadow: none !important;
 }
 
-.btn-primary:focus, .btn-primary.focus {
+.btn-outline-primary:active {
+  color: #fff; 
+  background-color: #3f2f59 !important; 
+  border-color: #fff !important;
+  box-shadow: none !important;
+}
+
+.btn-outline-primary:focus {
+  color: #fff; 
+  background-color: #3f2f59 !important; 
+  border-color: #fff !important;
+  box-shadow: none !important;
+}
+
+/*.btn-primary:focus, .btn-primary.focus {
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
 }
 
@@ -51,7 +339,7 @@ body {
   background-color: #0069d9;
   background-image: none;
   border-color: #0062cc;
-}
+}*/
 
 .form-box{
   margin-top: 100px;
@@ -301,7 +589,7 @@ h2 {
 }
 
 .userEmail{
-  color:#fff;
+  color:#001A33;
   margin:0 10px;
 }
 
