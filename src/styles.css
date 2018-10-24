@@ -351,11 +351,17 @@ RIPPLES EFFECT
   margin-top: 100px;
   padding: 50px;
   background: #ffffff;
-  border: 10px solid #5e4485;
+  /*border: 10px solid #5e4485;*/
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
 }
 
 .table-responsive{
   background-color: #fff;
+}
+
+.table-responsive .thead{
+  background-color: aliceblue;
 }
 /*
 .form-container {
