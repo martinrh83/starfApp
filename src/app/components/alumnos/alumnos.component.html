@@ -13,7 +13,7 @@
               <th class="text-center" scope="col">Nombre</th>
               <th class="text-center" scope="col">Apellido</th>
               <th class="text-center" scope="col">Legajo</th>
-              <th class="text-center" scope="col">Opciones</th>
+              <th class="text-center" scope="col">Email</th>
             </tr>
           </thead>
           <tbody>
@@ -22,20 +22,18 @@
               <td class="text-center" >{{ alumnos[alumno].name }}</td>
               <td class="text-center" >{{alumnos[alumno].last_name}}</td>
               <td class="text-center" >{{alumnos[alumno].legajo}}</td>
-              <td class="text-right">
-                <button [routerLink]="['/ciclo-lectivo', k]" class="btn btn-outline-primary">Editar</button>
-                <button (click)="deleteCl(k)" class="btn btn-outline-danger">Eliminar</button>
-              </td>
+              <td class="text-center" >{{alumnos[alumno].email}}</td>
             </tr>
           </tbody>
         </table>
-        <div *ngIf="(alumnos | keys).length === 0 && !loading" class="alert alert-info" role="alert">
-          <strong>No hay registros que mostrar</strong>
-        </div>
-        <div *ngIf="loading" class="alert alert-warning">
-          <strong>Cargando, por favor espere...</strong>
-        </div>
       </div>
+      <div *ngIf="(alumnos | keys).length === 0 && !loading" class="alert alert-info" role="alert">
+        <strong>No hay registros que mostrar</strong>
+      </div>
+      <div *ngIf="loading" class="alert alert-warning">
+        <strong>Cargando, por favor espere...</strong>
+      </div>
+      <br>
     </div>
   </div>
 </div>

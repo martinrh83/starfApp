@@ -6,7 +6,8 @@ moment.weekdays(true);
 
 @Component({
   selector: 'app-calendar',
-  templateUrl: './calendar.component.html'
+  templateUrl: './calendar.component.html',
+  styleUrls: ['./calendar.component.css']
 })
 
 

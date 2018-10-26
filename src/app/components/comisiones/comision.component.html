@@ -10,6 +10,7 @@
           <br>
           <div class="form-group">
             <select class="custom-select form-control" [(ngModel)]="comision.grade_id" name="grade_id" >
+              <option [ngValue]="undefined" disabled  selected>Seleccione un nivel</option>
               <option *ngFor="let nivel of niveles" value= {{nivel.id}}>
                  {{nivel.level}} : {{ nivel.school_year.year}}
               </option>
@@ -23,6 +24,7 @@
           <div class="form-group">
             <div class="text-center">
               <button [disabled]="!forma.valid" type="submit" class="btn btn-outline-primary puntero">Guardar Cambios</button>
+              <span class="separator"></span>
               <button [routerLink]="['/comisiones']" class="btn btn-outline-danger puntero">Volver</button>
             </div>
           </div>

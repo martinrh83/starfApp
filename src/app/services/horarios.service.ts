@@ -18,7 +18,7 @@ export class HorariosService {
   getAulas(): Observable<Aula []>{
     return this.http.get(this.aulasUrl).map((response: Response)=> response.json())
   }
-
+  
   getHorarios(): Observable<Horario []>{
     return this.http.get(this.horariosUrl).map((response: Response)=> response.json())
   }

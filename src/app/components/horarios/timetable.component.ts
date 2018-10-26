@@ -7,7 +7,7 @@ import { Timetable } from '../../interfaces/timetable';
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
-  selector: 'app-horario',
+  selector: 'app-timetable',
   templateUrl: './timetable.component.html'
 })
 

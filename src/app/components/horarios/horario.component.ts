@@ -10,6 +10,7 @@ import { Aula } from '../../interfaces/aula';
 import { Timetable } from '../../interfaces/timetable';
 import {ActivatedRoute, Router} from "@angular/router";
 import { DatePipe } from '@angular/common';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-horario',
@@ -24,6 +25,7 @@ export class HorarioComponent implements OnInit {
   aulas: Aula[];
   horario = new Horario;
   selectedHs = [];
+  formatedDays = [];
   dropdownSettings = {};
   selectedDays = [];
 
@@ -61,7 +63,9 @@ export class HorarioComponent implements OnInit {
 
   saveDaysSelected(selectedDays) {
     this.selectedDays = selectedDays;
+    this.formatedDays = selectedDays.map(day =>(moment(day).format('dddd, DD/MM/YYYY')));
   }
+
   createHorario(horario:Horario,selectedHs){
     this.submitted = true;
     console.log(horario);

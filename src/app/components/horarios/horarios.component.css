@@ -1,19 +1,36 @@
 .cabeceraNivel {
   color: #fff;
-  background-color: #5e4485;
+  background-color: #3f2f59;
   border-radius: 5px;
   padding:5px 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 2px 2px 0 #000;
 }
 .year_panel{
-  color: #5e4485;
+  background: none;
+  color: #3f2f59;
   font-weight: bold;
 }
 
+.year_panel:hover{
+  color:#007FFF;
+  text-decoration: underline;
+}
+
+.year_panel:active {
+  box-shadow: none !important;
+}
+
+.year_panel:focus {
+  box-shadow: none !important;
+}
+
 .panel_comision{
-  background-color: #D6D6D6 ;
+  background-color: aliceblue ;
 }
 .comision{
-  /*border: 5px solid;*/
+  border: 1px solid #dee2e6;
   margin:15px 0;
   padding:10px;
   background-color: #fff;

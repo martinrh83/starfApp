@@ -13,17 +13,18 @@
           </div>
           <div class="form-group">
             <label for=""></label>
-            <input  [(ngModel)]="materia.code" name="code" type="text" class="form-control" placeholder="Codigo" required>
+            <input  [(ngModel)]="materia.code" name="code" type="text" class="form-control" placeholder="Código" required>
           </div>
           <div class="form-group">
             <select class="custom-select form-control" [(ngModel)]="materia.period" name="period" >
-              <option selected> Elige una opción...</option>
+              <option [ngValue]="undefined" disabled  selected>Seleccione régimen</option>
               <option value="Anual">Anual</option>
               <option value="Cuatrimestral">Cuatrimestral</option>
             </select>
           </div>
           <div class="form-group">
             <select class="custom-select form-control" [(ngModel)]="materia.grade_id" name="grade_id" >
+              <option [ngValue]="undefined" disabled  selected>Seleccione un nivel</option>
               <option *ngFor="let nivel of niveles" value= {{nivel.id}}>
                  {{nivel.level}} : {{ nivel.school_year.year}}
               </option>
@@ -32,6 +33,7 @@
           <div class="form-group">
             <div class="text-center">
               <button [disabled]="!forma.valid" type="submit" class="btn btn-outline-primary puntero">Guardar Cambios</button>
+              <span class="separator"></span>
               <button [routerLink]="['/materias']" class="btn btn-outline-danger puntero">Volver</button>
             </div>
           </div>

@@ -18,6 +18,8 @@ import { HorarioComponent } from './components/horarios/horario.component';
 import { HorariosComisionComponent } from './components/horarios/horarios-comision.component';
 import { CalendarComponent } from './components/horarios/calendar.component';
 import { TimetableComponent } from './components/horarios/timetable.component';
+import { TimetablesComponent } from './components/horarios/timetables.component';
+import { AulasComponent } from './components/aulas/aulas.component';
 import { AuthGuardService } from './services/auth-guard.service';
 
 export const router: Routes = [
@@ -31,12 +33,14 @@ export const router: Routes = [
     { path: 'materia/new', component: MateriaComponent, canActivate: [AuthGuardService]},
     { path: 'comisiones', component: ComisionesComponent, canActivate: [AuthGuardService]},
     { path: 'comision/new', component: ComisionComponent, canActivate: [AuthGuardService]},
+    { path: 'aulas', component: AulasComponent, canActivate: [AuthGuardService]},
     { path: 'alumnos', component: AlumnosComponent, canActivate: [AuthGuardService]},
     { path: 'horarios', component: HorariosComponent, canActivate: [AuthGuardService]},
     { path: 'horarios/:com_id', component: HorariosComisionComponent, canActivate: [AuthGuardService]},
     { path: 'horario/new/:com_id', component: HorarioComponent, canActivate: [AuthGuardService]},
     { path: 'calendar', component: CalendarComponent},
-    { path: 'timetable/new', component: TimetableComponent },
+    { path: 'horas', component: TimetablesComponent, canActivate: [AuthGuardService]},
+    { path: 'hora/new', component: TimetableComponent, canActivate: [AuthGuardService] },
 
 
 ]

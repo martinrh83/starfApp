@@ -1,15 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    /*background:#E2E4E6;*/
+  background:#8d71b7;
   /*padding-top:4em;*/
-  width: 100%;
+  /*width: 100%;
   height: 100%;
   background: url('./fondo.jpeg') !important;
   background-size: 100% 100%;
-  background-position: top center;
+  background-position: top center;*/
  
 }
 
+.separator{
+  padding:0 1px;
+}
+
+.table{
+  margin-bottom: 0px !important;
+}
 /*.bg-navbar{
   background-color: #5e4485;
 
@@ -623,8 +630,8 @@ h2 {
 .calendar-days{
   width:60px;
   height: 60px;
-  background: red;
-  border: 3px solid black;
+  background: #fff;
+  border: 1px solid black;
 }
 
 .inactive{
@@ -632,10 +639,30 @@ h2 {
 }
 
 .today{
-  color:yellow;
+  color:blue;
 }
 
 .selectedDay{
-  background: peru;
+  background: pink;
   opacity: 0.6px;
+}
+
+.daysSelected{
+  display: inline-block;
+  max-height: 100%;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 100px;
+  background-color: #fff;
+  padding:20px;
+  overflow: hidden;
+}
+
+.daysSelected .content{
+  overflow-y: scroll;
+  max-height: 800px;
+  padding:10px;
+}
+.daysSelected .content p {
+  text-transform: capitalize;
 }

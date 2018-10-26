@@ -28,18 +28,20 @@
               <td class="text-center" >{{ cls[k].year }}</td>
               <td class="text-right">
                 <button [routerLink]="['/ciclo-lectivo', k]" class="btn btn-outline-primary">Editar</button>
+                <span class="separator"></span>
                 <button (click)="deleteCl(k)" class="btn btn-outline-danger">Eliminar</button>
               </td>
             </tr>
           </tbody>
         </table>
-        <div *ngIf="(cls | keys).length === 0 && !loading" class="alert alert-info" role="alert">
-          <strong>No hay registros que mostrar</strong>
-        </div>
-        <div *ngIf="loading" class="alert alert-warning">
-          <strong>Cargando, por favor espere...</strong>
-        </div>
       </div>
+      <div *ngIf="(cls | keys).length === 0 && !loading" class="alert alert-info" role="alert">
+        <strong>No hay registros que mostrar</strong>
+      </div>
+      <div *ngIf="loading" class="alert alert-warning">
+        <strong>Cargando, por favor espere...</strong>
+      </div>
+      <br>
     </div>
   </div>
 </div>

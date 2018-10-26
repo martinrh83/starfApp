@@ -13,6 +13,7 @@
           </div>
           <div class="form-group"> 
             <select class="custom-select form-control" [(ngModel)]="nivel.school_year_id" name="school_year_id" >
+              <option [ngValue]="undefined" disabled  selected>Seleccione un ciclo lectivo</option>
               <option *ngFor="let cl of cls" value= {{cl.id}}>
                  {{cl.year}}
               </option>
@@ -21,6 +22,7 @@
           <div class="form-group">
             <div class="text-center">
               <button [disabled]="!forma.valid" type="submit" class="btn btn-outline-primary puntero">Guardar Cambios</button>
+              <span class="separator"></span>
               <button [routerLink]="['/niveles']" class="btn btn-outline-danger puntero">Volver</button>
             </div>
           </div>

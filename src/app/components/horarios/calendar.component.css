@@ -1,0 +1,24 @@
+.monthName{
+  margin:0 auto;
+}
+
+.month{
+  text-transform: uppercase;
+  padding:0 10px;
+  font-weight: bold;
+}
+
+.weekDay{
+  background-color: aliceblue;
+}
+
+.dayText{
+  position: relative;
+  text-align: center;
+  margin:0 auto;
+  top:20%;
+}
+
+.daysSelected{
+  margin-top: 100px;
+}

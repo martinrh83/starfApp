@@ -17,6 +17,7 @@ import { CiclosLectivosService } from './services/ciclos-lectivos.service';
 import { NivelesService } from './services/niveles.service';
 import { MateriasService } from './services/materias.service';
 import { ComisionesService } from './services/comisiones.service';
+import { AulasService } from './services/aulas.service';
 import { AlumnosService } from './services/alumnos.service';
 import { HorariosService } from './services/horarios.service';
 import { AuthService } from './services/auth.service';
@@ -35,17 +36,20 @@ import { MateriaComponent } from './components/materias/materia.component';
 import { ComisionesComponent } from './components/comisiones/comisiones.component';
 import { ComisionComponent } from './components/comisiones/comision.component';
 import { AlumnosComponent } from './components/alumnos/alumnos.component';
+import { AulasComponent } from './components/aulas/aulas.component';
 import { HorariosComponent } from './components/horarios/horarios.component';
 import { HorarioComponent } from './components/horarios/horario.component';
 import { HorariosComisionComponent } from './components/horarios/horarios-comision.component';
 import { CalendarComponent } from './components/horarios/calendar.component';
 import { TimetableComponent } from './components/horarios/timetable.component';
+import { TimetablesComponent } from './components/horarios/timetables.component';
 
 
 
 // the second parameter 'fr' is optional
 //pipes
 import { KeysPipe } from './pipes/keys.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,7 +69,9 @@ import { KeysPipe } from './pipes/keys.pipe';
     HorarioComponent,
     HorariosComisionComponent,
     TimetableComponent,
-    CalendarComponent
+    TimetablesComponent,
+    CalendarComponent,
+    AulasComponent
   ],
   imports: [
     BrowserModule,
@@ -82,6 +88,7 @@ import { KeysPipe } from './pipes/keys.pipe';
     NivelesService,
     MateriasService,
     ComisionesService,
+    AulasService,
     AlumnosService,
     HorariosService,
     AuthService,

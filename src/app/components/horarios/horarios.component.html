@@ -9,22 +9,30 @@
         <div class="card" *ngFor="let cl of cls; let i = index">
           <div class="card-header panel_header" id="panel_{{ i }}">
             <h5 class="mb-0 text-center">
-              <button class="btn btn-link year_panel" data-toggle="collapse" [attr.data-target]="'#body_'+ i" aria-expanded="false" [attr.aria-controls]="'body_'+ i">
+              <button class="btn year_panel" data-toggle="collapse" [attr.data-target]="'#body_'+ i" aria-expanded="false" [attr.aria-controls]="'body_'+ i">
                 {{cl.year }}
               </button>
             </h5>
           </div>
           <div id="body_{{ i }}" class="collapse" [attr.aria-labelledby]="'body_'+ i" data-parent="#accordion">
-            <div class="card-body panel_comision" >
+            <div class="card-body panel_comision" *ngIf="cl.grades.length > 0">
               <div class="niveles" *ngFor="let nivel of cl.grades">
                 <h3 class="cabeceraNivel text-center">{{ nivel.level }} año</h3>
-                <div class="comisiones" *ngFor="let comision of nivel.courses">
-                  <div class="comision clearfix">
-                    <p class="float-left">{{comision.name}}</p>
-                    <button [routerLink]="['/horarios', comision.id ]" class="btn btn-outline-primary float-right">Ver horario</button>
+                <div *ngIf="nivel.courses.length > 0">
+                  <div class="comisiones" *ngFor="let comision of nivel.courses">
+                    <div class="comision clearfix">
+                      <p class="float-left">{{comision.name}}</p>
+                      <button [routerLink]="['/horarios', comision.id ]" class="btn btn-outline-primary float-right">Ver horario</button>
+                    </div>
                   </div>
                 </div>
+                <div class="comision" *ngIf="nivel.courses == 0">
+                  <p class="text-center pt-3">No hay comisiones creadas</p>
+                </div>
               </div>
+            </div>
+            <div *ngIf="cl.grades.length == 0">
+              <p class="text-center pt-3">No hay niveles creados</p>
             </div>
           </div>
         </div>

@@ -1,0 +1,35 @@
+<div class="page-title">
+  <h4 class="text-center">Aulas</h4>
+</div>
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+          <thead class="thead">
+            <tr>
+              <th class="text-center" scope="col">#</th>
+              <th class="text-center" scope="col">Nro</th>
+              <th class="text-center" scope="col">Descripción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let aula of aulas | keys; let i = index">
+              <th class="text-center"  scope="row">{{i + 1}}</th>
+              <td class="text-center" >{{ aulas[aula].nro }}</td>
+              <td class="text-center" >{{aulas[aula].description}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div *ngIf="(aulas | keys).length === 0 && !loading" class="alert alert-info" role="alert">
+        <strong>No hay registros que mostrar</strong>
+      </div>
+      <div *ngIf="loading" class="alert alert-warning">
+        <strong>Cargando, por favor espere...</strong>
+      </div>
+      <br>
+    </div>
+  </div>
+</div>
