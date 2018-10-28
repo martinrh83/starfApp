@@ -19,6 +19,7 @@
             <tr>
               <th class="text-center" scope="col">#</th>
               <th class="text-center" scope="col">Nombre</th>
+              <th class="text-center" scope="col">Turno</th>
               <th class="text-center" scope="col">Nivel</th>
               <th class="text-center" scope="col">Año lectivo</th>
               <th class="text-center" scope="col">Opciones</th>
@@ -28,6 +29,7 @@
             <tr *ngFor="let comision of comisiones | keys; let i = index">
               <th class="text-center"  scope="row">{{i + 1}}</th>
               <td class="text-center" >{{ comisiones[comision].name }}</td>
+              <td class="text-center" >{{ comisiones[comision].turno }}</td>
               <td class="text-center" >{{comisiones[comision].grade.level}}</td>
               <td class="text-center" >{{comisiones[comision].grade.school_year.year}}</td>
               <td class="text-right">

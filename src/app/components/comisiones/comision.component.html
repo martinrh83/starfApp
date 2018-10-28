@@ -27,6 +27,14 @@
           <div class="form-group">
             <input  [(ngModel)]="comision.name" name="name" type="text" class="form-control" placeholder="Nombre (Ej:k1,k2,k3)" required>
           </div>
+          <div class="form-group">
+            <select class="custom-select form-control" [(ngModel)]="comision.turno" name="turno" required>
+              <option [ngValue]="undefined" disabled  selected> Seleccione un turno </option>
+              <option value="Mañana">Mañana</option>
+              <option value="Tarde">Tarde</option>
+              <option value="Noche">Noche</option>
+            </select>
+          </div>
           <br>
           <div class="form-group">
             <div class="text-center">
