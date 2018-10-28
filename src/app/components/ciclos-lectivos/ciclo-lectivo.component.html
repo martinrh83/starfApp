@@ -6,9 +6,16 @@
     <div class="col-md-3"></div>
     <div class="col-md-6">
       <div class="form-box">
+        <div *ngIf="formError" class="alert alert-danger">
+          <div *ngFor="let error of errorData">
+            <strong>{{ error }}</strong>
+          </div>
+        </div>
+        <div *ngIf="anioSaved" class="alert alert-success">
+          <strong>Se ha guardado el ciclo lectivo correctamente.</strong>
+        </div>
         <form (ngSubmit)="createCl(cl)" #forma="ngForm">
           <div class="form-group">
-            <label for=""></label>
             <input  [(ngModel)]="cl.year" name="year" type="text" class="form-control" placeholder="Año" required>
           </div>
           <div class="form-group">

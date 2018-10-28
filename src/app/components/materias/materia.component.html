@@ -6,27 +6,33 @@
     <div class="col-md-3"></div>
     <div class="col-md-6">
       <div class="form-box">
+        <div *ngIf="formError" class="alert alert-danger">
+          <div *ngFor="let error of errorData">
+            <strong>{{ error }}</strong>
+          </div>
+        </div>
+        <div *ngIf="subjectSaved" class="alert alert-success">
+          <strong>Se ha guardado la materia correctamente.</strong>
+        </div>
         <form (ngSubmit)="createMateria(materia)" #forma="ngForm">
           <div class="form-group">
-            <label for=""></label>
             <input  [(ngModel)]="materia.name" name="name" type="text" class="form-control" placeholder="Nombre" required>
           </div>
           <div class="form-group">
-            <label for=""></label>
             <input  [(ngModel)]="materia.code" name="code" type="text" class="form-control" placeholder="Código" required>
           </div>
           <div class="form-group">
-            <select class="custom-select form-control" [(ngModel)]="materia.period" name="period" >
+            <select class="custom-select form-control" [(ngModel)]="materia.period" name="period" required>
               <option [ngValue]="undefined" disabled  selected>Seleccione régimen</option>
               <option value="Anual">Anual</option>
               <option value="Cuatrimestral">Cuatrimestral</option>
             </select>
           </div>
           <div class="form-group">
-            <select class="custom-select form-control" [(ngModel)]="materia.grade_id" name="grade_id" >
+            <select class="custom-select form-control" [(ngModel)]="materia.grade_id" name="grade_id" required >
               <option [ngValue]="undefined" disabled  selected>Seleccione un nivel</option>
               <option *ngFor="let nivel of niveles" value= {{nivel.id}}>
-                 {{nivel.level}} : {{ nivel.school_year.year}}
+                Nivel: {{nivel.level}} - Año: {{ nivel.school_year.year}}
               </option>
             </select>
           </div>

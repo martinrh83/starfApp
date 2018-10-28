@@ -6,13 +6,21 @@
     <div class="col-md-3"></div>
     <div class="col-md-6">
       <div class="form-box">
+        <div *ngIf="formError" class="alert alert-danger">
+          <div *ngFor="let error of errorData">
+            <strong>{{ error }}</strong>
+          </div>
+        </div>
+        <div *ngIf="horaSaved" class="alert alert-success">
+          <strong>Se han guardado las horas correctamente.</strong>
+        </div>
         <form (ngSubmit)="createTimetable(timetable)" #forma="ngForm">
           <br>
           <button class="btn btn-outline-primary" type="button" (click)="getHourInit()"> Hora de inicio</button>
-            <input [(ngModel)]="timetable.hour_init"  name="hour_init" type="time" class="form-control" >
+            <input [(ngModel)]="timetable.hour_init"  name="hour_init" type="time" class="form-control" required>
           <br>
           <button class="btn btn-outline-primary" type="button" (click)="getHourEnd()"> Hora de finalizacion</button>
-            <input [(ngModel)]="timetable.hour_end"  name="hour_end" type="time" class="form-control" >
+            <input [(ngModel)]="timetable.hour_end"  name="hour_end" type="time" class="form-control" required >
           <br>
           <div class="form-group">
             <div class="text-center">

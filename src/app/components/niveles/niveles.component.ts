@@ -14,8 +14,9 @@ export class NivelesComponent implements OnInit {
   niveles:Nivel[];
   loading:boolean = true;
 
-  constructor(private _nivelService:NivelesService) { 
-     this._nivelService.getNiveles().subscribe(data => {
+  constructor(private _nivelService:NivelesService) {
+    window.scrollTo(0, 0);
+    this._nivelService.getNiveles().subscribe(data => {
       this.niveles = data;
       this.loading = false;
      });

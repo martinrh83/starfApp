@@ -14,10 +14,6 @@ import {ActivatedRoute} from "@angular/router";
   templateUrl: './horarios-comision.component.html'
 })
 
-
-
-
-
 export class HorariosComisionComponent implements OnInit {
   id_comision:string;
   loading:boolean = true;
@@ -63,7 +59,93 @@ export class HorariosComisionComponent implements OnInit {
 
   ];
 
+  arrayHorarioTarde: TablaHorario [] = [
+
+    {"day": "Lunes", "hour_init": "13:15", "hour_end": "14:00", "course": "4k6"},
+    {"day": "Martes", "hour_init": "13:15", "hour_end": "14:00", "course": "4k6"},
+    {"day": "Miercoles", "hour_init": "13:15", "hour_end": "14:00", "course": "4k6"},
+    {"day": "Jueves", "hour_init": "13:15", "hour_end": "14:45", "course": "4k6"},
+    {"day": "Viernes", "hour_init": "13:15", "hour_end": "14:00", "course": "4k6"},
+    {"day": "Lunes", "hour_init": "14:00", "hour_end": "14:45", "course": "4k6"},
+    {"day": "Martes", "hour_init": "14:00", "hour_end": "14:45", "course": "4k6"},
+    {"day": "Miercoles", "hour_init": "14:00", "hour_end": "14:45", "course": "4k6"},
+    {"day": "Jueves", "hour_init": "14:00", "hour_end": "14:45", "course": "4k6"},
+    {"day": "Viernes", "hour_init": "14:00", "hour_end": "14:45", "course": "4k6"},
+    {"day": "Lunes", "hour_init": "14:45", "hour_end": "15:30", "course": "4k6"},
+    {"day": "Martes", "hour_init": "14:45", "hour_end": "15:30", "course": "4k6"},
+    {"day": "Miercoles", "hour_init": "14:45", "hour_end": "15:30", "course": "4k6"},
+    {"day": "Jueves", "hour_init": "14:45", "hour_end": "15:30", "course": "4k6"},
+    {"day": "Viernes", "hour_init": "14:45", "hour_end": "15:30", "course": "4k6"},
+    {"day": "Lunes", "hour_init": "15:30", "hour_end": "16:15", "course": "4k6"},
+    {"day": "Martes", "hour_init": "15:30", "hour_end": "16:15", "course": "4k6"},
+    {"day": "Miercoles", "hour_init": "15:30", "hour_end": "16:15", "course": "4k6"},
+    {"day": "Jueves", "hour_init": "15:30", "hour_end": "16:15", "course": "4k6"},
+    {"day": "Viernes", "hour_init": "15:30", "hour_end": "16:15", "course": "4k6"},
+    {"day": "Lunes", "hour_init": "16:15", "hour_end": "17:00", "course": "4k6"},
+    {"day": "Martes", "hour_init": "16:15", "hour_end": "17:00", "course": "4k6"},
+    {"day": "Miercoles", "hour_init": "16:15", "hour_end": "17:00", "course": "4k6"},
+    {"day": "Jueves", "hour_init": "16:15", "hour_end": "17:00", "course": "4k6"},
+    {"day": "Viernes", "hour_init": "16:15", "hour_end": "17:00", "course": "4k6"},
+    {"day": "Lunes", "hour_init": "17:00", "hour_end": "17:45", "course": "4k6"},
+    {"day": "Martes", "hour_init": "17:00", "hour_end": "17:45", "course": "4k6"},
+    {"day": "Miercoles", "hour_init": "17:00", "hour_end": "17:45", "course": "4k6"},
+    {"day": "Jueves", "hour_init": "17:00", "hour_end": "17:45", "course": "4k6"},
+    {"day": "Viernes", "hour_init": "17:00", "hour_end": "17:45", "course": "4k6"},
+    {"day": "Lunes", "hour_init": "17:45", "hour_end": "18:30", "course": "4k6"},
+    {"day": "Martes", "hour_init": "17:45", "hour_end": "18:30", "course": "4k6"},
+    {"day": "Miercoles", "hour_init": "17:45", "hour_end": "18:30", "course": "4k6"},
+    {"day": "Jueves", "hour_init": "17:45", "hour_end": "18:30", "course": "4k6"},
+    {"day": "Viernes", "hour_init": "17:45", "hour_end": "18:30", "course": "4k6"},
+    {"day": "Lunes", "hour_init": "18:30", "hour_end": "19:15", "course": "4k6"},
+    {"day": "Martes", "hour_init": "18:30", "hour_end": "19:15", "course": "4k6"},
+    {"day": "Miercoles", "hour_init": "18:30", "hour_end": "19:15", "course": "4k6"},
+    {"day": "Jueves", "hour_init": "18:30", "hour_end": "19:15", "course": "4k6"},
+    {"day": "Viernes", "hour_init": "18:30", "hour_end": "19:15", "course": "4k6"}
+
+  ];
+
+  arrayHorarioNoche: TablaHorario [] = [
+
+    {"day": "Lunes", "hour_init": "18:15", "hour_end": "19:00", "course": "4k6"},
+    {"day": "Martes", "hour_init": "18:15", "hour_end": "19:00", "course": "4k6"},
+    {"day": "Miercoles", "hour_init": "18:15", "hour_end": "19:00", "course": "4k6"},
+    {"day": "Jueves", "hour_init": "18:15", "hour_end": "19:45", "course": "4k6"},
+    {"day": "Viernes", "hour_init": "18:15", "hour_end": "19:00", "course": "4k6"},
+    {"day": "Lunes", "hour_init": "19:00", "hour_end": "19:45", "course": "4k6"},
+    {"day": "Martes", "hour_init": "19:00", "hour_end": "19:45", "course": "4k6"},
+    {"day": "Miercoles", "hour_init": "19:00", "hour_end": "19:45", "course": "4k6"},
+    {"day": "Jueves", "hour_init": "19:00", "hour_end": "19:45", "course": "4k6"},
+    {"day": "Viernes", "hour_init": "19:00", "hour_end": "19:45", "course": "4k6"},
+    {"day": "Lunes", "hour_init": "19:45", "hour_end": "20:30", "course": "4k6"},
+    {"day": "Martes", "hour_init": "19:45", "hour_end": "20:30", "course": "4k6"},
+    {"day": "Miercoles", "hour_init": "19:45", "hour_end": "20:30", "course": "4k6"},
+    {"day": "Jueves", "hour_init": "19:45", "hour_end": "20:30", "course": "4k6"},
+    {"day": "Viernes", "hour_init": "19:45", "hour_end": "20:30", "course": "4k6"},
+    {"day": "Lunes", "hour_init": "20:30", "hour_end": "21:15", "course": "4k6"},
+    {"day": "Martes", "hour_init": "20:30", "hour_end": "21:15", "course": "4k6"},
+    {"day": "Miercoles", "hour_init": "20:30", "hour_end": "21:15", "course": "4k6"},
+    {"day": "Jueves", "hour_init": "20:30", "hour_end": "21:15", "course": "4k6"},
+    {"day": "Viernes", "hour_init": "20:30", "hour_end": "21:15", "course": "4k6"},
+    {"day": "Lunes", "hour_init": "21:15", "hour_end": "22:00", "course": "4k6"},
+    {"day": "Martes", "hour_init": "21:15", "hour_end": "22:00", "course": "4k6"},
+    {"day": "Miercoles", "hour_init": "21:15", "hour_end": "22:00", "course": "4k6"},
+    {"day": "Jueves", "hour_init": "21:15", "hour_end": "22:00", "course": "4k6"},
+    {"day": "Viernes", "hour_init": "21:15", "hour_end": "22:00", "course": "4k6"},
+    {"day": "Lunes", "hour_init": "22:00", "hour_end": "22:45", "course": "4k6"},
+    {"day": "Martes", "hour_init": "22:00", "hour_end": "22:45", "course": "4k6"},
+    {"day": "Miercoles", "hour_init": "22:00", "hour_end": "22:45", "course": "4k6"},
+    {"day": "Jueves", "hour_init": "22:00", "hour_end": "22:45", "course": "4k6"},
+    {"day": "Viernes", "hour_init": "22:00", "hour_end": "22:45", "course": "4k6"},
+    {"day": "Lunes", "hour_init": "22:45", "hour_end": "23:30", "course": "4k6"},
+    {"day": "Martes", "hour_init": "22:45", "hour_end": "23:30", "course": "4k6"},
+    {"day": "Miercoles", "hour_init": "22:45", "hour_end": "23:30", "course": "4k6"},
+    {"day": "Jueves", "hour_init": "22:45", "hour_end": "23:30", "course": "4k6"},
+    {"day": "Viernes", "hour_init": "22:45", "hour_end": "23:30", "course": "4k6"}
+
+  ];
+
   constructor(private router:ActivatedRoute, private _horariosService: HorariosService, private datePipe: DatePipe) {
+    window.scrollTo(0, 0);
     this.router.params.subscribe( params => {
             this.id_comision = params['com_id']; 
             this.getHorario(this.id_comision);
@@ -83,7 +165,7 @@ export class HorariosComisionComponent implements OnInit {
 
   filterByHour(horaXdia:any, dia:string){
     for (var value of horaXdia) {
-      let hora = this.datePipe.transform(value.hour_init, 'HH:mm');
+      let hora = this.datePipe.transform(value.timetable.hour_init, 'HH:mm');
       for(var item of this.arrayHorario){
         if(item.day == dia && item.hour_init == hora ){
           item["subject"] = value;

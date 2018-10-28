@@ -17,7 +17,9 @@ export class TimetableComponent implements OnInit {
   timetable = new Timetable;
   hour_init:any;
   hour_end:any;
-
+  formError:boolean = false;
+  errorData;
+  horaSaved:boolean = false;
   constructor(private atp: AmazingTimePickerService, private _horaService: HorariosService, private router:ActivatedRoute, private _router:Router) {
 
   }
@@ -56,7 +58,17 @@ export class TimetableComponent implements OnInit {
 
   createTimetable(timetable){
     this.submitted = true;
-    this._horaService.createTimetable(timetable).subscribe(data => {console.log(data)});
+    this._horaService.createTimetable(timetable).subscribe(data => {
+      if(data.error){
+        this.formError = true;
+        this.errorData = data.data;
+      }else{
+        this.horaSaved = true;
+        setTimeout(() => {
+          this._router.navigate(['/horas']);
+        }, 2500);
+      }
+    });
   }
 
 }
