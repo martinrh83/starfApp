@@ -12,6 +12,9 @@ export class ComisionesService {
   
   constructor(private http:Http) { }
 
+  getComision(id):Observable<Comision>{
+    return this.http.get(`${this.comisionesUrl}/${id}`).map((response:Response) => response.json())
+  }
   getComisiones(): Observable<Comision []>{
     return this.http.get(this.comisionesUrl).map((response: Response)=> response.json())
   }

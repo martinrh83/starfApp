@@ -16,7 +16,7 @@
       <div class="item">Viernes</div>
     </div>
     <div class="flex-container">
-      <div class="horas">
+      <div class="horas" *ngIf="comisionTurno == 'Mañana'">
         <div class="item">8:00 a 8:45</div>
         <div class="item">8:45 a 9:30</div>
         <div class="item">9:30 a 10:15</div>
@@ -25,8 +25,27 @@
         <div class="item">11:45 a 12:30</div>
         <div class="item">12:30 a 13:15</div>
       </div>
+      <div class="horas" *ngIf="comisionTurno == 'Tarde'">
+        <div class="item">13:15 a 14:00</div>
+        <div class="item">14:00 a 14:45</div>
+        <div class="item">14:45 a 15:30</div>
+        <div class="item">15:30 a 16:15</div>
+        <div class="item">16:15 a 17:00</div>
+        <div class="item">17:00 a 17:45</div>
+        <div class="item">17:45 a 18:30</div>
+        <div class="item">18:30 a 19:15</div>
+      </div>
+      <div class="horas" *ngIf="comisionTurno == 'Noche'">
+        <div class="item">18:15 a 19:00</div>
+        <div class="item">19:00 a 19:45</div>
+        <div class="item">19:45 a 20:30</div>
+        <div class="item">20:30 a 21:15</div>
+        <div class="item">21:15 a 22:00</div>
+        <div class="item">22:00 a 22:45</div>
+        <div class="item">22:45 a 23:30</div>
+      </div>
       <div class="materias" >
-        <div class="item" *ngFor="let item of arrayHorario">
+        <div class="item" *ngFor="let item of horarioSelected">
           <p  *ngIf="item.subject != null; else noMateria"> {{item.subject.subject.name}}</p>
           <ng-template #noMateria>
             
