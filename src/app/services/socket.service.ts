@@ -10,14 +10,14 @@ import ReconnectingWebSocket from 'reconnecting-websocket';
 export class DataService {
   data:any;
   constructor(private http:Http){
-    this.data = {'task_id':'1','legajo': '36034', 'alumno':'Romano Martin', 'confidence': '45', 'datetime':'Tue, 09 Oct 2018 08:15:00 -03 -03:00'}
+    /*this.data = {'task_id':'1','legajo': '36034', 'alumno':'Romano Martin', 'confidence': '45', 'datetime':'Tue, 07 Nov 2018 09:35:00 -03 -03:00'}*/
     //setInterval(() => {return this.data}, 15500);
     /*Observable.interval(55500)
         .subscribe(() => {
           console.log("eee")
           this.updateAsistencia(this.data).subscribe(data=>{console.log(data);});
     })*/
-    /*let rws = new ReconnectingWebSocket('ws://jorgearias1:-d350la1@192.168.0.11:8000/testing/');
+    let rws = new ReconnectingWebSocket('ws://jorgearias1:-d350la1@192.168.0.102:8000/testing/');
     rws.addEventListener('open', () => {
         
       let socket_request = {
@@ -37,16 +37,25 @@ export class DataService {
         }else if(data.leave){
 
         }else{
+          console.log("entre aqui")
           console.log(data.message)
+          this.updateAsistencia(data).subscribe(data=> {return console.log(data)});
         }
-    });*/
+    });
 
   }
+
+  /*updateAsistencia(data:any){
+    let headers = new Headers({'Content-Type':'application/json'});
+    let options = new RequestOptions({headers:headers});
+    return this.http.patch(URL_SERVICIOS + '/attendances/update', JSON.stringify(data), options).map((res:Response) => res.json()).subscribe(data=> {return console.log(data)})
+  }*/
 
   updateAsistencia(data:any){
     let headers = new Headers({'Content-Type':'application/json'});
     let options = new RequestOptions({headers:headers});
-    return this.http.patch(URL_SERVICIOS + '/attendances/update', JSON.stringify(data), options).map((res:Response) => res.json()) 
+    return this.http.patch(URL_SERVICIOS + '/attendances/update', JSON.stringify(data), options).map((res:Response) => res.json())
   }
+
 
 }

@@ -14,17 +14,23 @@ export class CiclosLectivosService {
   constructor(private http:Http) { }
 
   getCls(): Observable<CicloLectivo []>{
-    return this.http.get(this.clsUrl).map((response: Response)=> response.json())
+    return this.http.get(this.clsUrl).map((response: Response)=> response.json());
   }
 
   getCl(id:number){
-    return this.http.get( `${this.clsUrl}/${id}`)
+    return this.http.get( `${this.clsUrl}/${id}`);
   }
 
   createCl(cl:CicloLectivo){
     let headers = new Headers({'Content-Type':'application/json'});
     let options = new RequestOptions({headers:headers});
-    return this.http.post(this.clsUrl, JSON.stringify(cl), options).map((res:Response) => res.json()) 
+    return this.http.post(this.clsUrl, JSON.stringify(cl), options).map((res:Response) =>{
+      console.log(res.json());
+      return res.json();
+    } );
+  }
 
+  deleteCl(clId: number): Observable<number> {
+    return this.http.delete(`${this.clsUrl}/${clId}`).map(success => success.status);
   }
 }
