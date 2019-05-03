@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx'
 import { Comision } from '../../interfaces/comision';
 import { ComisionesService } from '../../services/comisiones.service';
@@ -12,7 +11,7 @@ import {Router} from "@angular/router";
   selector: 'app-comision',
   templateUrl: './comision.component.html'
 })
-export class ComisionComponent implements OnInit {
+export class ComisionComponent {
 
   comision = new Comision;
   niveles:Nivel[];
@@ -27,9 +26,6 @@ export class ComisionComponent implements OnInit {
      });
   }
 
-  ngOnInit() {
-  }
-
   createComision(comision:Comision){
     this.submitted = true;
     this.formError = false;
@@ -41,7 +37,7 @@ export class ComisionComponent implements OnInit {
         this.courseSaved = true;
         setTimeout(() => {
           this._router.navigate(['/comisiones']);
-        }, 2500);
+        }, 1500);
       }
     });
   }

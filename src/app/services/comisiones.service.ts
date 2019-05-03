@@ -26,4 +26,8 @@ export class ComisionesService {
 
   }
 
+  deleteComision(comId: number): Observable<number> {
+    return this.http.delete(`${this.comisionesUrl}/${comId}`).map(success => success.status);
+  }
+
 }

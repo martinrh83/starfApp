@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Component } from '@angular/core';
 import 'rxjs/Rx'
 import { Comision } from '../../interfaces/comision';
 import { ComisionesService } from '../../services/comisiones.service';
@@ -9,20 +8,31 @@ import { ComisionesService } from '../../services/comisiones.service';
   templateUrl: './comisiones.component.html',
   styleUrls: ['./comisiones.component.css']
 })
-export class ComisionesComponent implements OnInit {
+export class ComisionesComponent {
 
   comisiones:Comision[];
   loading:boolean = true;
+  comisionDeleted:boolean = false;
 
   constructor(private _comisionService:ComisionesService) { 
-     this._comisionService.getComisiones().subscribe(data => {
+    this.refreshComisiones();
+  }
+
+  refreshComisiones(){
+    this._comisionService.getComisiones().subscribe(data => {
       this.comisiones = data;
       this.loading = false;
-     });
-
+    });
   }
-
-  ngOnInit() {
+  //Delete comision
+  delete(comId: number) {
+    this._comisionService.deleteComision(comId).subscribe(() => {
+      this.refreshComisiones();
+      this.comisionDeleted = true;
+      document.documentElement.scrollTop = 0;
+      setTimeout(() => {
+        this.comisionDeleted = false;
+       },3000);
+    });
   }
-
 }

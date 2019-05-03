@@ -13,6 +13,9 @@
   <br>
   <div class="row">
     <div class="col-md-12">
+      <div *ngIf="comisionDeleted" class="alert alert-success">
+        <strong>Se ha eliminado la comisión correctamente.</strong>
+      </div>
       <div class="table-responsive">
         <table class="table table-bordered table-hover">
           <thead class="thead">
@@ -35,7 +38,7 @@
               <td class="text-right">
                 <button [routerLink]="['/ciclo-lectivo', k]" class="btn btn-outline-primary">Editar</button>
                 <span class="separator"></span>
-                <button (click)="deleteCl(k)" class="btn btn-outline-danger">Eliminar</button>
+                <button (click)="delete(comisiones[comision].id)" class="btn btn-outline-danger">Eliminar</button>
               </td>
             </tr>
           </tbody>
