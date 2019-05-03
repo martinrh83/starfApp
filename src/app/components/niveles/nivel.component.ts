@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Component } from '@angular/core';
 import 'rxjs/Rx'
 import {  Nivel } from '../../interfaces/nivel';
 import { NivelesService } from '../../services/niveles.service';
@@ -11,7 +10,8 @@ import {Router} from "@angular/router";
   selector: 'app-nivel',
   templateUrl: './nivel.component.html'
 })
-export class NivelComponent implements OnInit {
+
+export class NivelComponent {
 
   nivel = new Nivel;
   cls:CicloLectivo[];
@@ -26,9 +26,6 @@ export class NivelComponent implements OnInit {
      });
   }
 
-  ngOnInit() {
-  }
-
   createNivel(nivel:Nivel){
     this.submitted = true;
     this.formError = false;
@@ -40,7 +37,7 @@ export class NivelComponent implements OnInit {
         this.gradeSaved = true;
         setTimeout(() => {
           this._router.navigate(['/niveles']);
-        }, 2500);
+        }, 1500);
       }
     });
   }

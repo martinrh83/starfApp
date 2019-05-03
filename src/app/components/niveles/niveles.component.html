@@ -13,6 +13,9 @@
   <br>
   <div class="row">
     <div class="col-md-12">
+      <div *ngIf="nivelDeleted" class="alert alert-success">
+        <strong>Se ha eliminado el nivel correctamente.</strong>
+      </div>
       <div class="table-responsive">
         <table class="table table-bordered table-hover">
           <thead class="thead">
@@ -26,12 +29,12 @@
           <tbody>
             <tr *ngFor="let nivel of niveles | keys; let i = index">
               <th class="text-center"  scope="row">{{i + 1}}</th>
-              <td class="text-center" >{{ niveles[nivel].level }}</td>
+              <td class="text-center" >{{niveles[nivel].level}}</td>
               <td class="text-center" >{{niveles[nivel].school_year.year}}</td>
               <td class="text-right">
                 <button [routerLink]="['/ciclo-lectivo', k]" class="btn btn-outline-primary">Editar</button>
                 <span class="separator"></span>
-                <button (click)="deleteCl(k)" class="btn btn-outline-danger">Eliminar</button>
+                <button (click)="delete(niveles[nivel].id)" class="btn btn-outline-danger">Eliminar</button>
               </td>
             </tr>
           </tbody>

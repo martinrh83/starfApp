@@ -26,4 +26,9 @@ export class NivelesService {
     return this.http.post(this.nivelesUrl, JSON.stringify(nivel), options).map((res:Response) => res.json()) 
 
   }
+
+  deleteNivel(nivelId: number): Observable<number> {
+    return this.http.delete(`${this.nivelesUrl}/${nivelId}`).map(success => success.status);
+  }
+
 }
