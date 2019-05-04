@@ -19,8 +19,8 @@
           <button class="btn btn-outline-primary" type="button" (click)="getHourInit()"> Hora de inicio</button>
             <input [(ngModel)]="timetable.hour_init"  name="hour_init" type="time" class="form-control" required>
           <br>
-          <button class="btn btn-outline-primary" type="button" (click)="getHourEnd()"> Hora de finalizacion</button>
-            <input [(ngModel)]="timetable.hour_end"  name="hour_end" type="time" class="form-control" required >
+          <button class="btn btn-outline-primary" type="button"> Hora de finalizacion</button>
+            <input [(ngModel)]="timetable.hour_end"  name="hour_end" type="time" class="form-control" disabled>
           <br>
           <div class="form-group">
             <div class="text-center">
