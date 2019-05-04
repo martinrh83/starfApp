@@ -13,6 +13,9 @@
   <br>
   <div class="row">
     <div class="col-md-12">
+      <div *ngIf="materiaDeleted" class="alert alert-success">
+        <strong>Se ha eliminado la materia correctamente.</strong>
+      </div>
       <div class="table-responsive">
         <table class="table table-bordered table-hover">
           <thead class="thead">
@@ -22,6 +25,7 @@
               <th class="text-center" scope="col">Código</th>
               <th class="text-center" scope="col">Periodo</th>
               <th class="text-center" scope="col">Nivel</th>
+              <th class="text-center" scope="col">Año</th>
               <th class="text-center" scope="col">Opciones</th>
             </tr>
           </thead>
@@ -32,10 +36,11 @@
               <td class="text-center" >{{materias[materia].code}}</td>
               <td class="text-center" >{{materias[materia].period}}</td>
               <td class="text-center" >{{materias[materia].grade.level}}</td>
+              <td class="text-center">{{materias[materia].grade.school_year.year}}</td>
               <td class="text-right">
                 <button [routerLink]="['/ciclo-lectivo', k]" class="btn btn-outline-primary">Editar</button>
                 <span class="separator"></span>
-                <button (click)="deleteCl(k)" class="btn btn-outline-danger">Eliminar</button>
+                <button (click)="delete(materias[materia].id)" class="btn btn-outline-danger">Eliminar</button>
               </td>
             </tr>
           </tbody>

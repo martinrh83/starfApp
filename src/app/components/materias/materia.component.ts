@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Component } from '@angular/core';
 import 'rxjs/Rx'
 import { Materia } from '../../interfaces/materia';
 import { MateriasService } from '../../services/materias.service';
@@ -11,7 +10,7 @@ import {Router} from "@angular/router";
   selector: 'app-materia',
   templateUrl: './materia.component.html'
 })
-export class MateriaComponent implements OnInit {
+export class MateriaComponent {
 
   materia = new Materia;
   niveles:Nivel[];
@@ -26,9 +25,6 @@ export class MateriaComponent implements OnInit {
      });
   }
 
-  ngOnInit() {
-  }
-
   createMateria(materia:Materia){
     this.submitted = true;
     this.formError = false;
@@ -40,7 +36,7 @@ export class MateriaComponent implements OnInit {
         this.subjectSaved = true;
         setTimeout(() => {
           this._router.navigate(['/materias']);
-        }, 2500);
+        }, 1500);
       }
     });
   }

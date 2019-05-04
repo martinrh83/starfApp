@@ -19,6 +19,9 @@ export class MateriasService {
     let headers = new Headers({'Content-Type':'application/json'});
     let options = new RequestOptions({headers:headers});
     return this.http.post(this.materiasUrl, JSON.stringify(materia), options).map((res:Response) => res.json()) 
+  }
 
+  deleteMateria(matId: number): Observable<number> {
+    return this.http.delete(`${this.materiasUrl}/${matId}`).map(success => success.status);
   }
 }
