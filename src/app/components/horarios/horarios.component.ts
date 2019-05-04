@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Component } from '@angular/core';
 import 'rxjs/Rx'
 import { CicloLectivo } from '../../interfaces/ciclo-lectivo';
 import { CiclosLectivosService } from '../../services/ciclos-lectivos.service';
@@ -10,11 +9,7 @@ import { CiclosLectivosService } from '../../services/ciclos-lectivos.service';
   styleUrls: ['./horarios.component.css']
 })
 
-
-
-
-
-export class HorariosComponent implements OnInit {
+export class HorariosComponent {
   cls:CicloLectivo[];
   loading:boolean = true;
 
@@ -24,7 +19,4 @@ export class HorariosComponent implements OnInit {
       this.loading = false;
      });
   }
-
-  ngOnInit() {
-  }  
 }

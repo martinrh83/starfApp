@@ -1,20 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Component } from '@angular/core';
 import 'rxjs/Rx'
 import { Horario } from '../../interfaces/horario';
 import { TablaHorario } from '../../interfaces/tablaHorario';
 import { HorariosService } from '../../services/horarios.service';
 import { DatePipe } from '@angular/common';
 import { ComisionesService } from '../../services/comisiones.service';
-
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute , Router} from "@angular/router";
 
 @Component({
   selector: 'app-horarios-comision',
   templateUrl: './horarios-comision.component.html'
 })
 
-export class HorariosComisionComponent implements OnInit {
+export class HorariosComisionComponent {
   id_comision:string;
   comisionTurno:any;
   loading:boolean = true;
@@ -146,7 +144,7 @@ export class HorariosComisionComponent implements OnInit {
 
   ];
 
-  constructor(private router:ActivatedRoute, private _horariosService: HorariosService, private datePipe: DatePipe, private _comisionService:ComisionesService) {
+  constructor(private router:ActivatedRoute, private _horariosService: HorariosService, private datePipe: DatePipe, private _comisionService:ComisionesService, private _router:Router) {
     window.scrollTo(0, 0);
     this.router.params.subscribe( params => {
             this.id_comision = params['com_id'];
@@ -165,8 +163,6 @@ export class HorariosComisionComponent implements OnInit {
             });
         });
   }
-
-
 
   filterByDay(horas:Horario[], horarioSelected:Horario []){
     for (var dia of this.dias){
@@ -195,10 +191,10 @@ export class HorariosComisionComponent implements OnInit {
     })
   }
 
-
-  ngOnInit() {
-
+  getSchedule(item){
+    if(item.subject){
+      this._router.navigate(['/horario/admin', item.subject.id]);
+      console.log(item);
+    }
   }
-
-  
 }

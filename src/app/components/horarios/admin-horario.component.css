@@ -1,0 +1,44 @@
+.cabecera {
+  color: #fff;
+  background-color: #3f2f59;
+  border-radius: 5px;
+  padding:5px 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 2px 2px 0 #000;
+}
+.year_panel{
+  background: none;
+  color: #3f2f59;
+  font-weight: bold;
+}
+
+.year_panel:hover{
+  color:#007FFF;
+  text-decoration: underline;
+}
+
+.year_panel:active {
+  box-shadow: none !important;
+}
+
+.year_panel:focus {
+  box-shadow: none !important;
+}
+
+.panel{
+  background-color: aliceblue ;
+}
+.card{
+  margin: 100px 0;
+}
+.elemento{
+  border: 1px solid #dee2e6;
+  margin:5px 0;
+  /*padding:5px;*/
+  background-color: #fff;
+  border-radius: 5px;
+}
+.options{
+  margin-top: 20px;
+}

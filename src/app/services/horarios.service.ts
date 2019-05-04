@@ -23,6 +23,10 @@ export class HorariosService {
     return this.http.get(this.horariosUrl).map((response: Response)=> response.json())
   }
 
+  getSchedule(id:any): Observable<any>{
+    return this.http.get(`${URL_SERVICIOS}/schedule/${id}`).map((response: Response)=> response.json())
+  }
+  
   createHorario(horario:Horario, id:string, selectedHs, selectedDaysArr){
     let headers = new Headers({'Content-Type':'application/json'});
     let options = new RequestOptions({headers:headers});

@@ -45,7 +45,7 @@
         <div class="item">22:45 a 23:30</div>
       </div>
       <div class="materias" >
-        <div class="item" *ngFor="let item of horarioSelected">
+        <div [ngClass]="{'puntero': item.subject}" class="item" *ngFor="let item of horarioSelected" (click)="getSchedule(item)">
           <p  *ngIf="item.subject != null; else noMateria"> {{item.subject.subject.name}}</p>
           <ng-template #noMateria>
             

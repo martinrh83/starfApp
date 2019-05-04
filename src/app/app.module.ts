@@ -43,6 +43,7 @@ import { HorariosComisionComponent } from './components/horarios/horarios-comisi
 import { CalendarComponent } from './components/horarios/calendar.component';
 import { TimetableComponent } from './components/horarios/timetable.component';
 import { TimetablesComponent } from './components/horarios/timetables.component';
+import { AdminHorarioComponent } from './components/horarios/admin-horario.component'
 
 
 
@@ -71,7 +72,8 @@ import { KeysPipe } from './pipes/keys.pipe';
     TimetableComponent,
     TimetablesComponent,
     CalendarComponent,
-    AulasComponent
+    AulasComponent,
+    AdminHorarioComponent
   ],
   imports: [
     BrowserModule,

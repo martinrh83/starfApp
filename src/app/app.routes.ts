@@ -20,6 +20,8 @@ import { CalendarComponent } from './components/horarios/calendar.component';
 import { TimetableComponent } from './components/horarios/timetable.component';
 import { TimetablesComponent } from './components/horarios/timetables.component';
 import { AulasComponent } from './components/aulas/aulas.component';
+import { AdminHorarioComponent } from './components/horarios/admin-horario.component';
+
 import { AuthGuardService } from './services/auth-guard.service';
 
 export const router: Routes = [
@@ -38,6 +40,7 @@ export const router: Routes = [
     { path: 'horarios', component: HorariosComponent, canActivate: [AuthGuardService]},
     { path: 'horarios/:com_id', component: HorariosComisionComponent, canActivate: [AuthGuardService]},
     { path: 'horario/new/:com_id', component: HorarioComponent, canActivate: [AuthGuardService]},
+    { path: 'horario/admin/:horario_id', component: AdminHorarioComponent, canActivate: [AuthGuardService]},
     { path: 'calendar', component: CalendarComponent},
     { path: 'horas', component: TimetablesComponent, canActivate: [AuthGuardService]},
     { path: 'hora/new', component: TimetableComponent, canActivate: [AuthGuardService] },

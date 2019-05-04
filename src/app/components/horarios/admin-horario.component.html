@@ -1,0 +1,61 @@
+<div class="page-title">
+    <h4 class="text-center">Administrar horario</h4>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <div class="card" *ngIf="schedule !== undefined">
+          <div class="card-body panel">
+            <div class="group">
+              <h5 class="cabecera text-center">Comisión</h5>
+              <div class="elemento">
+                <p class="text-center pt-3">{{schedule.course.name}}</p>
+              </div>
+            </div>
+            <div class="group">
+              <h5 class="cabecera text-center">Materia</h5>
+              <div class="elemento">
+                <p class="text-center pt-3">{{schedule.subject.name}}</p>
+              </div>
+            </div>
+            <div class="group">
+              <h5 class="cabecera text-center">Hora de inicio</h5>
+              <div class="elemento">
+                <p class="text-center pt-3">{{hora_inicio}}</p>
+              </div>
+            </div>
+            <div class="group">
+              <h5 class="cabecera text-center">Hora de finalización</h5>
+              <div class="elemento">
+                <p class="text-center pt-3">{{hora_fin}}</p>
+              </div>
+            </div>
+            <div class="group">
+              <h5 class="cabecera text-center">Aula</h5>
+              <div class="elemento">
+                <p class="text-center pt-3">{{schedule.classroom.description}}</p>
+              </div>
+            </div>
+            <div class="options">
+              <div class="text-center">
+                <button type="button" [routerLink]="['/horarios/', schedule.course.id ]" class="btn btn-outline-primary puntero">Volver</button>
+                <span class="separator"></span>
+                <button type="button" class="btn btn-outline-danger puntero">Eliminar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="daysSelected" *ngIf="formatedDays.length > 0">
+          <h5>Días de cursado</h5>
+          <div class="content">        
+            <div *ngFor="let  day of formatedDays">
+              <p>{{day}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -11,7 +11,7 @@
             <input class="form-control" [(ngModel)]="horario.course_id" name="course_id" type="hidden">
           </div>
           <div class="form-group">
-            <select class="custom-select form-control" [(ngModel)]="horario.subject_id" name="subject_id" >
+            <select class="custom-select form-control" [(ngModel)]="horario.subject_id" name="subject_id" required>
               <option [ngValue]="undefined" disabled  selected> Seleccione materia </option>
               <option *ngFor="let  materia of materias" value= {{materia.id}}>
                  {{materia.name}}
@@ -19,7 +19,7 @@
             </select>
           </div>
           <div class="form-group">
-            <select class="custom-select form-control" [(ngModel)]="horario.classroom_id" name="classroom_id" >
+            <select class="custom-select form-control" [(ngModel)]="horario.classroom_id" name="classroom_id" required>
               <option [ngValue]="undefined" disabled  selected>Seleccione aula</option>
               <option *ngFor="let  aula of aulas" value= {{aula.id}}>
                  {{aula.description}}
@@ -27,7 +27,7 @@
             </select>
           </div>
           <div class="form-group">
-            <select class="custom-select form-control" [(ngModel)]="horario.day" name="day" >
+            <select class="custom-select form-control" [(ngModel)]="horario.day" name="day" required >
               <option [ngValue]="undefined" disabled  selected> Seleccione día </option>
               <option value="Lunes">Lunes</option>
               <option value="Martes">Martes</option>
@@ -37,7 +37,7 @@
             </select>
           </div>
           <br>
-          <div class="form-group">
+          <div class="form-group" required>
             <ng-multiselect-dropdown
               name="selectedHs"
               [placeholder]="'Seleccione una hora/s'"

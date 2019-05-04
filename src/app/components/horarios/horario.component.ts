@@ -54,8 +54,8 @@ export class HorarioComponent implements OnInit {
       singleSelection: false,
       idField: 'id',
       textField: 'text',
-      selectAllText: 'Select All',
-      unSelectAllText: 'UnSelect All',
+      selectAllText: 'Seleccionar todos',
+      unSelectAllText: 'Deseleccionar todos',
       itemsShowLimit: 3,
       allowSearchFilter: true
     };
