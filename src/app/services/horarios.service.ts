@@ -43,4 +43,8 @@ export class HorariosService {
     return this.http.post(`${URL_SERVICIOS}/timetables`, JSON.stringify(timetable), options).map((res:Response) => res.json()) 
   }
 
+  deleteTimetable(timeId: number): Observable<number> {
+    return this.http.delete(`${this.timetablesUrl}/${timeId}`).map(success => success.status);
+  }
+
 }
