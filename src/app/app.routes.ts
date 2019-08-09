@@ -41,7 +41,7 @@ export const router: Routes = [
     { path: 'horarios/:com_id', component: HorariosComisionComponent, canActivate: [AuthGuardService]},
     { path: 'horario/new/:com_id', component: HorarioComponent, canActivate: [AuthGuardService]},
     { path: 'horario/admin/:horario_id', component: AdminHorarioComponent, canActivate: [AuthGuardService]},
-    { path: 'calendar', component: CalendarComponent},
+    { path: 'calendario', component: CalendarComponent, canActivate: [AuthGuardService]},
     { path: 'horas', component: TimetablesComponent, canActivate: [AuthGuardService]},
     { path: 'hora/new', component: TimetableComponent, canActivate: [AuthGuardService] },
 

@@ -51,7 +51,7 @@ export class CalendarComponent implements OnInit {
 
   createCalendar(month){
     let firstDay = moment(month).startOf("M");
-    console.log(firstDay);
+    //console.log(firstDay);
     let days = Array.apply(null,{length:month.daysInMonth()}).map(Number.call, Number)
     .map(((n)=>{
       return moment(firstDay).add(n,'d');
@@ -59,7 +59,7 @@ export class CalendarComponent implements OnInit {
     for(let n=0; n < firstDay.weekday();n++){
       days.unshift(null);
     }
-    console.log(days)
+    //console.log(days)
     return days;
 
   }
@@ -87,8 +87,9 @@ export class CalendarComponent implements OnInit {
         }
       })){
         console.log("ya existe el elmento")
-        this.selectedDaysArr.splice( this.selectedDaysArr.indexOf(day), 1 );
-        console.log(this.selectedDaysArr)
+        //console.log(`el indice devuelto es ${this.selectedDaysArr.indexOf(day.format())}`):
+        this.selectedDaysArr.splice( this.selectedDaysArr.indexOf(day.format()), 1 );
+        console.log(this.selectedDaysArr);
       }else{
         this.selectedDaysArr.push(day.format());
         console.log(this.selectedDaysArr)

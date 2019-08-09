@@ -1,7 +1,25 @@
+.box-calendar{
+  text-align: center;
+  margin-top: 50px;
+}
+.box-calendar__item{
+  display:inline-block;
+  background: white;
+  padding:20px;
+}
+.calendar{
+  margin: 0 auto;
+  padding:10px;
+}
+.center{
+  margin: 0 auto;
+}
 .monthName{
   margin:0 auto;
 }
-
+.monthName__arrow{
+  cursor: pointer;
+}
 .month{
   text-transform: uppercase;
   padding:0 10px;
@@ -10,6 +28,10 @@
 
 .weekDay{
   background-color: aliceblue;
+}
+
+.calendar-days__day{
+  cursor: pointer;
 }
 
 .dayText{

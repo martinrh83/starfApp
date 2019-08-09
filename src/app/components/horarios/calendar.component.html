@@ -1,32 +1,37 @@
-<div class="container">
-  <div class="row">
-    <div class="div text-center monthName">
-      <span class="fa fa-chevron-left" (click)="previousMonth()"></span>
-      <span class="month">{{date.format('MMMM')}}</span>
-      <span class="fa fa-chevron-right" (click)="nextMonth()"></span>
-    </div>
-  </div>
-  <div class="row">
-    <div class="calendar">
-      <div class=" flex-center">
-        <div class="flex-calendar">
-          <div class="weekDay calendar-days flex-container flex-center"><p class="dayText">L</p></div>
-          <div class="weekDay calendar-days flex-container flex-center"><p class="dayText">M</p></div>
-          <div class="weekDay calendar-days flex-container flex-center"><p class="dayText">M</p></div>
-          <div class="weekDay calendar-days flex-container flex-center"><p class="dayText">J</p></div>
-          <div class="weekDay calendar-days flex-container flex-center"><p class="dayText">V</p></div>
-          <div class="weekDay calendar-days flex-container flex-center"><p class="dayText">S</p></div>
-          <div class="weekDay calendar-days flex-container flex-center"><p class="dayText">D</p></div>
-        </div>
-      </div>
-      <div class="flex-calendar flex-wrap">
-        <div *ngFor="let day of daysArr">
-          <div class="calendar-days" [ngClass]="{'inactive': !day, 'today': todayCheck(day), 'selectedDay': isSelected(day) }" (click)="selectedDate(day)"><p class="dayText">{{day?.date()}}</p></div>
-        </div>
+<div class="page-title">
+  <h4 class="text-center">Calendario</h4>
+</div>
+<div class="container box-calendar">
+  <div class="box-calendar__item">
+    <div class="row">
+      <div class="div text-center monthName">
+        <span class="fa fa-chevron-left monthName__arrow" (click)="previousMonth()"></span>
+        <span class="month">{{date.format('MMMM')}}</span>
+        <span class="fa fa-chevron-right monthName__arrow" (click)="nextMonth()"></span>
       </div>
     </div>
-    <div>
-      <p>{{selectedDaysArr}}</p>
+    <div class="row">
+      <div class="calendar">
+        <div class=" flex-center">
+          <div class="flex-calendar">
+            <div class="weekDay calendar-days flex-container flex-center"><p class="dayText">L</p></div>
+            <div class="weekDay calendar-days flex-container flex-center"><p class="dayText">M</p></div>
+            <div class="weekDay calendar-days flex-container flex-center"><p class="dayText">M</p></div>
+            <div class="weekDay calendar-days flex-container flex-center"><p class="dayText">J</p></div>
+            <div class="weekDay calendar-days flex-container flex-center"><p class="dayText">V</p></div>
+            <div class="weekDay calendar-days flex-container flex-center"><p class="dayText">S</p></div>
+            <div class="weekDay calendar-days flex-container flex-center"><p class="dayText">D</p></div>
+          </div>
+        </div>
+        <div class="flex-calendar flex-wrap">
+          <div *ngFor="let day of daysArr">
+            <div class="calendar-days calendar-days__day" [ngClass]="{'inactive': !day, 'today': todayCheck(day), 'selectedDay': isSelected(day) }" (click)="selectedDate(day)"><p class="dayText">{{day?.date()}}</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <button type="submit" class="btn btn-outline-primary puntero center">Guardar Cambios</button>
     </div>
   </div>
 </div>
