@@ -3,7 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, LOCALE_ID} from '@angular/core';
 import { HttpModule } from '@angular/http';
-import { FormsModule }   from '@angular/forms';
+import { MatAutocompleteModule, MatInputModule, MatStepperModule, MatIconModule, MatProgressBarModule, MatListModule, MatDividerModule, MatTableModule, MatDatepickerModule, MatCardModule} from '@angular/material';
+import {MAT_MOMENT_DATE_FORMATS,MomentDateAdapter} from '@angular/material-moment-adapter';
+import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { routes } from './app.routes';
 import { DatePipe, registerLocaleData } from '@angular/common';
 import { AmazingTimePickerModule } from 'amazing-time-picker';
@@ -50,6 +53,9 @@ import { AdminHorarioComponent } from './components/horarios/admin-horario.compo
 // the second parameter 'fr' is optional
 //pipes
 import { KeysPipe } from './pipes/keys.pipe';
+import { AsistenciasComponent } from './components/asistencias/asistencias.component';
+import { CargarAsistenciaComponent } from './components/asistencias/cargar-asistencia.component';
+import { CargarExcepcionComponent } from './components/asistencias/cargar-excepcion.component';
 
 @NgModule({
   declarations: [
@@ -73,12 +79,26 @@ import { KeysPipe } from './pipes/keys.pipe';
     TimetablesComponent,
     CalendarComponent,
     AulasComponent,
-    AdminHorarioComponent
+    AdminHorarioComponent,
+    AsistenciasComponent,
+    CargarAsistenciaComponent,
+    CargarExcepcionComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MatAutocompleteModule,
+    MatInputModule,
+    MatStepperModule,
+    MatIconModule,
+    MatListModule,
+    MatProgressBarModule,
+    MatDividerModule,
+    MatDatepickerModule,
+    MatTableModule,
+    MatCardModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     routes,
     AmazingTimePickerModule,
@@ -86,6 +106,8 @@ import { KeysPipe } from './pipes/keys.pipe';
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'es-AR'},
+    {provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE]},
+    {provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS},
     CiclosLectivosService,
     NivelesService,
     MateriasService,

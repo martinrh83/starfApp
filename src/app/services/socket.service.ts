@@ -17,7 +17,7 @@ export class DataService {
           console.log("eee")
           this.updateAsistencia(this.data).subscribe(data=>{console.log(data);});
     })*/
-    let rws = new ReconnectingWebSocket('ws://jorgearias1:-d350la1@192.168.0.102:8000/testing/');
+    /*let rws = new ReconnectingWebSocket('ws://jorgearias1:-d350la1@192.168.0.102:8000/testing/');
     rws.addEventListener('open', () => {
         
       let socket_request = {
@@ -41,7 +41,7 @@ export class DataService {
           console.log(data.message)
           this.updateAsistencia(data).subscribe(data=> {return console.log(data)});
         }
-    });
+    });*/
 
   }
 

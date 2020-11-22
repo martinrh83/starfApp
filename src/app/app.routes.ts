@@ -21,6 +21,9 @@ import { TimetableComponent } from './components/horarios/timetable.component';
 import { TimetablesComponent } from './components/horarios/timetables.component';
 import { AulasComponent } from './components/aulas/aulas.component';
 import { AdminHorarioComponent } from './components/horarios/admin-horario.component';
+import { AsistenciasComponent } from './components/asistencias/asistencias.component';
+import { CargarAsistenciaComponent } from './components/asistencias/cargar-asistencia.component';
+import { CargarExcepcionComponent } from './components/asistencias/cargar-excepcion.component';
 
 import { AuthGuardService } from './services/auth-guard.service';
 
@@ -44,7 +47,9 @@ export const router: Routes = [
     { path: 'calendario', component: CalendarComponent, canActivate: [AuthGuardService]},
     { path: 'horas', component: TimetablesComponent, canActivate: [AuthGuardService]},
     { path: 'hora/new', component: TimetableComponent, canActivate: [AuthGuardService] },
-
+    { path: 'asistencias', component: AsistenciasComponent, canActivate: [AuthGuardService] },
+    { path: 'cargar_asistencia', component: CargarAsistenciaComponent, canActivate: [AuthGuardService] },
+    { path: 'cargar_excepcion', component: CargarExcepcionComponent, canActivate: [AuthGuardService] }
 
 ]
 
