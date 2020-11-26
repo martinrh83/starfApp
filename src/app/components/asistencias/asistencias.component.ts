@@ -16,26 +16,20 @@ export class AsistenciasComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   isOptional = false;
-  options: string[] = ['2k1', '3k1', '4k1'];
-  optionsMat: string[] = ['Discreta', 'Algoritmos', 'Arquitectura'];
-  states;
+  options: string[] = ['1k1','1k2', '1k3', '1k4','1k5', '1k6', '1k7', '1k8','2k1','2k2','2k3','2k4','2k5','2k6', '3k1', '3k2', '3k3', '3k4','4k1','4k2', '4k3', '5k1','5k2'];
+  optionsMat: string[] = ['Algebra y Geometría Analítica', 'Análisis Matemático I','Matematica Discreta', 'Algoritmos y Estructura de Datos', 'Arquitectura de Computadoras',
+'Sistemas y Organizaciones', 'Química', 'Ingeniería y Sociedad', 'Análisis de Sistemas', 'Sistemas de Representación', 'Análisis Matemático II', 'Sintáxis y Semántica de los Lenguajes', 'Física I', 'Paradigmas de Programación', 'Inglés I', 'Probabilidad y Estadística', 'Diseño de Sistemas', 'Sistemas Operativos', 'Física II', 'Economía', 'Gestión de Datos', 'Inglés II', 'Matemática Superior', 'Legislacíon', 'Administración de Recursos', 'Redes de Información', 'Investigación Operativa','Proyecto Final', 'Inteligencia Artificial', 'Administración Gerencial', 'Sistemas de Gestión', ];
   
   dataSource = [
-    {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-    {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-    {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-    {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-    {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-    {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-    {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-    {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-    {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-    {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
+    {legajo: 36034, name: 'Rodolfo Martín Romano Heredia', attendances: 50},
+    {legajo: 24400, name: 'Germán Fringes', attendances: 45},
+    {legajo: 26476, name: 'Luis Svaldi', attendances: 40},
+    {legajo: 30666, name: 'Concepción  Pegoraro', attendances: 45 },
+    {legajo: 37853, name: 'Matías Aramburu', attendances: 45 }
   ];
 
   displayedColumns: string[] = ['legajo', 'name', 'attendances'];
   constructor(private _formBuilder: FormBuilder) { 
-    //this.loadStates();
   }
 
   ngOnInit() {
@@ -71,22 +65,6 @@ export class AsistenciasComponent implements OnInit {
    const filterValue = value.toLowerCase();
 
    return array.filter(option => option.toLowerCase().includes(filterValue));
- }
-
-  loadStates() {
-    var allStates = 'Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut, Delaware,\
-       Florida, Georgia, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana,\
-       Maine, Maryland, Massachusetts, Michigan, Minnesota, Mississippi, Missouri, Montana,\
-       Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina,\
-       North Dakota, Ohio, Oklahoma, Oregon, Pennsylvania, Rhode Island, South Carolina,\
-       South Dakota, Tennessee, Texas, Utah, Vermont, Virginia, Washington, West Virginia,\
-       Wisconsin, Wyoming';
-    this.states =  allStates.split(/, +/g).map( function (state) {
-       return {
-          value: state.toUpperCase(),
-          display: state
-       };
-    });
  }
 
 }
