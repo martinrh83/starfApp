@@ -11,7 +11,7 @@ import * as _moment from 'moment';
 })
 export class CargarExcepcionComponent implements OnInit {
   comControl = new FormControl('', Validators.required);
-  matControl = new FormControl('', Validators.required);
+  matControl = new FormControl({value: '', disabled:true}, Validators.required);
   dayControl = new FormControl('', Validators.required);
   filteredOptions: Observable<string[]>;
   filteredOptionsMat: Observable<string[]>;
@@ -19,6 +19,7 @@ export class CargarExcepcionComponent implements OnInit {
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
   isOptional = false;
+  disableBtn = true;
   options: string[] = ['1k1','1k2', '1k3', '1k4','1k5', '1k6', '1k7', '1k8','2k1','2k2','2k3','2k4','2k5','2k6', '3k1', '3k2', '3k3', '3k4','4k1','4k2', '4k3', '5k1','5k2'];
   optionsMat: string[] = ['Algebra y Geometría Analítica', 'Análisis Matemático I','Matematica Discreta', 'Algoritmos y Estructura de Datos', 'Arquitectura de Computadoras',
 'Sistemas y Organizaciones', 'Química', 'Ingeniería y Sociedad', 'Análisis de Sistemas', 'Sistemas de Representación', 'Análisis Matemático II', 'Sintáxis y Semántica de los Lenguajes', 'Física I', 'Paradigmas de Programación', 'Inglés I', 'Probabilidad y Estadística', 'Diseño de Sistemas', 'Sistemas Operativos', 'Física II', 'Economía', 'Gestión de Datos', 'Inglés II', 'Matemática Superior', 'Legislacíon', 'Administración de Recursos', 'Redes de Información', 'Investigación Operativa','Proyecto Final', 'Inteligencia Artificial', 'Administración Gerencial', 'Sistemas de Gestión', ];
@@ -37,20 +38,43 @@ export class CargarExcepcionComponent implements OnInit {
        map(value => this._filter(value, this.optionsMat))
      );
     this.firstFormGroup = this._formBuilder.group({
-      comControl: this.comControl
+      comControl: this.comControl,
+      matControl: this.matControl,
+      dayControl: this.dayControl
     });
-    this.secondFormGroup = this._formBuilder.group({
+    //this.matControl.disable();
+    this.comControl.valueChanges.subscribe(value => {
+      if(value && value != ''){
+        this.matControl.enable();
+      }else{
+        this.matControl.disable();
+      }
+      console.log(value)
+      /*if (value) {
+        this.matControl.enable();
+        //const dept = this.departamentos.find(d => d.value === value);
+        if (value){
+          console.log(value)
+          //this.matControl.setValue('asasdasd');
+        }
+          
+      }*/
+    });
+    /* this.secondFormGroup = this._formBuilder.group({
       matControl: this.matControl
     });
     this.thirdFormGroup = this._formBuilder.group({
       dayControl: this.dayControl
-    });
-   
+    }); */
+   this.firstFormGroup.valueChanges 
+   .subscribe((changedObj: any) => {
+        this.disableBtn = this.firstFormGroup.valid;
+   });
  }
  refreshForms(){
    this.firstFormGroup.reset();
-   this.secondFormGroup.reset();
-   this.thirdFormGroup.reset();
+  // this.secondFormGroup.reset();
+   //this.thirdFormGroup.reset();
  }
 
   private _filter(value: string, array: string []): string[] {

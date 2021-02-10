@@ -1,8 +1,16 @@
+.container_main{
+  display: flex;
+  padding: 25px;
+}
 .tp-form {
   min-width: 150px;
-  max-width: 500px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
 }
 .tp-full-width {
   width: 100%;
+  margin-bottom: 20px;
 }

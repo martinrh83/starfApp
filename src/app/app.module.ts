@@ -2,6 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, LOCALE_ID} from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { MatAutocompleteModule, MatInputModule, MatStepperModule, MatIconModule, MatProgressBarModule, MatListModule, MatDividerModule, MatTableModule, MatDatepickerModule, MatCardModule, MatSnackBarModule} from '@angular/material';
 import {MAT_MOMENT_DATE_FORMATS,MomentDateAdapter} from '@angular/material-moment-adapter';
@@ -26,6 +27,8 @@ import { HorariosService } from './services/horarios.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { DataService } from './services/socket.service';
+import { StarfService } from './services/starf.service';
+
 //components
 import { AppComponent } from './app.component';
 import { CiclosLectivosComponent } from './components/ciclos-lectivos/ciclos-lectivos.component';
@@ -101,6 +104,7 @@ import { CargarExcepcionComponent } from './components/asistencias/cargar-excepc
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    HttpClientModule,
     routes,
     AmazingTimePickerModule,
     NgMultiSelectDropDownModule.forRoot()
@@ -119,6 +123,7 @@ import { CargarExcepcionComponent } from './components/asistencias/cargar-excepc
     AuthService,
     AuthGuardService,
     DataService,
+    StarfService,
     DatePipe
    ],
   bootstrap: [AppComponent]
