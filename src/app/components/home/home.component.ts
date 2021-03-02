@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../services/socket.service';
 
 
 @Component({
@@ -9,11 +8,8 @@ import { DataService } from '../../services/socket.service';
 })
 export class HomeComponent implements OnInit {
   dataSocket:any;
-  constructor(private _socketService: DataService) { 
-    console.log(this._socketService.data);
-    this.dataSocket = this._socketService.data
-    console.log(this.dataSocket)
-    //this._socketService.updateAsistencia(this.dataSocket)
+  constructor() { 
+
   }
 
   ngOnInit() {

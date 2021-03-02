@@ -8,7 +8,7 @@
     <div class="col-md-8 container_main">
       <form class = "tp-form" [formGroup]="firstFormGroup" (ngSubmit)="onSubmit()">
         <mat-form-field class = "tp-full-width">
-          <input type="text" placeholder="Seleccionar comisión" aria-label="Number" matInput [matAutocomplete]="autoCom" formControlName="comControl" required>
+          <input type="text" placeholder="Ingresar comisión" aria-label="Number" matInput [matAutocomplete]="autoCom" formControlName="comControl" required>
           <mat-autocomplete #autoCom = "matAutocomplete">
             <mat-option *ngFor = "let option of filteredOptions | async" [value] = "option">
                {{option}}
@@ -26,35 +26,40 @@
         <button *ngIf="submitBtn" mat-button type="submit" class="btn btn-outline-primary resetBtn" [disabled]="!firstFormGroup.valid">Consultar</button>
       </form>
       <div *ngIf="showResults" class="results">
-        <table  mat-table [dataSource]="dataSource" class="mat-elevation-z8 table">
+        <div class="checkStudents" *ngIf="thereStudents">
+          <table  mat-table [dataSource]="dataSource" class="mat-elevation-z8 table">
 
-          <!--- Note that these columns can be defined in any order.
-                The actual rendered columns are set as a property on the row definition" -->
-        
-          <!-- Position Column -->
-          <ng-container matColumnDef="legajo">
-            <th mat-header-cell *matHeaderCellDef> Legajo </th>
-            <td mat-cell *matCellDef="let element"> {{element.legajo}} </td>
-          </ng-container>
-        
-          <!-- Name Column -->
-          <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef> Nombre </th>
-            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-          </ng-container>
-        
-          <!-- Weight Column -->
-          <ng-container matColumnDef="attendances">
-            <th mat-header-cell *matHeaderCellDef> Asistencia a clases(De las hs estipuladas) </th>
-            <td mat-cell *matCellDef="let element">
-              <mat-progress-bar class="bar" mode="determinate" [value]="element.attendances"></mat-progress-bar>
-              <span>{{element.attendances}} %</span>
-            </td>
-          </ng-container>
-        
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+          
+            <!-- Position Column -->
+            <ng-container matColumnDef="legajo">
+              <th mat-header-cell *matHeaderCellDef> Legajo </th>
+              <td mat-cell *matCellDef="let element"> {{element.legajo}} </td>
+            </ng-container>
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef> Nombre </th>
+              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+          
+            <!-- Weight Column -->
+            <ng-container matColumnDef="attendances">
+              <th mat-header-cell *matHeaderCellDef> Asistencia a clases(De las hs estipuladas) </th>
+              <td mat-cell *matCellDef="let element">
+                <mat-progress-bar class="bar" mode="determinate" [value]="element.attendances"></mat-progress-bar>
+                <span>{{element.attendances}} %</span>
+              </td>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </div>
+        <div *ngIf="!thereStudents">
+          <p>No hay estudiantes inscriptos.</p>
+        </div>
         <button mat-button (click)="refreshForms()" type="button" class="btn btn-outline-primary resetBtn">Resetear</button>
       </div> 
     </div>

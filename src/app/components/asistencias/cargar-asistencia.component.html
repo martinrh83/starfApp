@@ -5,9 +5,9 @@
   <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8 container_main">
-      <form class = "tp-form" [formGroup]="firstFormGroup">
+      <form class = "tp-form" [formGroup]="firstFormGroup" (ngSubmit)="onSubmit()">
         <mat-form-field class = "tp-full-width">
-          <input type="text" placeholder="Seleccionar comisión" aria-label="Number" matInput [matAutocomplete]="autoCom" formControlName="comControl" required>
+          <input type="text" placeholder="Ingresar comisión" aria-label="Number" matInput [matAutocomplete]="autoCom" formControlName="comControl" required>
           <mat-autocomplete #autoCom = "matAutocomplete">
             <mat-option *ngFor = "let option of filteredOptions | async" [value] = "option">
                {{option}}
@@ -23,14 +23,15 @@
           </mat-autocomplete>
         </mat-form-field>
         <mat-form-field class="tp-full-width">
-          <input matInput placeholder="Ingresar legajo" type="number" formControlName="legajoControl" required>
+          <input matInput placeholder="Ingresar legajo" type="text" minlength="5" maxlength="5" formControlName="legajoControl" pattern="\d*" required>
         </mat-form-field>
         <mat-form-field class = "tp-full-width">
           <input matInput [matDatepicker]="dp" placeholder="Seleccionar fecha"  formControlName="dayControl" required>
           <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
           <mat-datepicker #dp></mat-datepicker>
         </mat-form-field>
-        <button mat-button (click)="refreshForms(); openSnackBar()" type="button" class="btn btn-outline-primary resetBtn" [disabled]="!firstFormGroup.valid">Finalizar</button>
+        <!-- <button mat-button (click)="refreshForms(); openSnackBar()" type="button" class="btn btn-outline-primary resetBtn" [disabled]="!firstFormGroup.valid">Finalizar</button> -->
+        <button mat-button type="submit" class="btn btn-outline-primary resetBtn" [disabled]="!firstFormGroup.valid">Finalizar</button>
       </form>
     </div>
     <div class="col-md-2"></div>
