@@ -5,10 +5,10 @@
   <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8 container_main">
-      <form class = "tp-form" [formGroup]="firstFormGroup">
+      <form class = "tp-form" [formGroup]="firstFormGroup" (ngSubmit)="onSubmit()">
         <!-- <ng-template matStepLabel>Seleccione comisión</ng-template> -->
         <mat-form-field class = "tp-full-width">
-          <input type="text" placeholder="Seleccione comisión" aria-label="Number" matInput [matAutocomplete]="autoCom" formControlName="comControl" required>
+          <input type="text" placeholder="Ingresar comisión" aria-label="Number" matInput [matAutocomplete]="autoCom" formControlName="comControl" required>
           <mat-autocomplete #autoCom = "matAutocomplete">
             <mat-option *ngFor = "let option of filteredOptions | async" [value] = "option">
                {{option}}
@@ -16,7 +16,7 @@
           </mat-autocomplete>
         </mat-form-field>
         <mat-form-field class = "tp-full-width">
-          <input type="text" placeholder="Seleccione materia" aria-label="Number" matInput formControlName="matControl" [matAutocomplete]="autoMat" required>
+          <input type="text" placeholder="Seleccionar materia" aria-label="Number" matInput formControlName="matControl" [matAutocomplete]="autoMat" required>
           <mat-autocomplete #autoMat = "matAutocomplete">
             <mat-option *ngFor = "let option of filteredOptionsMat | async" [value] = "option">
                 {{option}}
@@ -24,11 +24,11 @@
           </mat-autocomplete>
         </mat-form-field>
         <mat-form-field class = "tp-full-width">
-          <input matInput [matDatepicker]="dp" placeholder="Seleccione fecha"  formControlName="dayControl" required>
+          <input matInput [matDatepicker]="dp" placeholder="Seleccionar fecha"  formControlName="dayControl" required>
           <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
           <mat-datepicker #dp></mat-datepicker>
         </mat-form-field>
-          <button mat-button (click)="refreshForms(); openSnackBar()" type="button" class="btn btn-outline-primary resetBtn" [disabled]="!firstFormGroup.valid">Finalizar</button>
+        <button mat-button type="submit" class="btn btn-outline-primary resetBtn" [disabled]="!firstFormGroup.valid">Finalizar</button>
       </form>
       <!-- <mat-vertical-stepper linear #stepper>
         <mat-step [stepControl]="firstFormGroup">
